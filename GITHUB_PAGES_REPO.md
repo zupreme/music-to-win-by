@@ -1,6 +1,7 @@
 # GitHub Pages Repo Structure - zupreme / music-to-win-by
 
 This is the publishable structure for the GitHub Pages source repo.
+It should read like a concise release dossier and integration kit for builders.
 
 ## Repo name
 
@@ -35,5 +36,6 @@ music-to-win-by/
 
 - Keep the same title, track order, and live service links across every host.
 - Use the published release language, not mastering language.
-- Keep the public copy short and citation-friendly.
+- Keep the public copy short, citation-friendly, and useful to technical teams.
+- Show builders how to reuse the album in products, dashboards, demos, and internal tools.
 - The branded front door now lives at `https://zeaun.com/music/`.

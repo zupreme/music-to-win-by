@@ -7,12 +7,13 @@ This is the clean public layout for the published release.
 - GitHub account: `zupreme`
 - Pages repo slug: `music-to-win-by`
 - Canonical dossier: `https://zupreme.github.io/music-to-win-by/`
+- Role: builder-facing dossier and machine-readable release reference
 
 ## Public front door
 
 - Host: `zeaun.com`
-- Path: `/music-to-win-by/`
-- Role: polished release landing page and primary shareable entry point
+- Path: `/music/`
+- Role: polished release landing page, primary shareable entry point, and integration cue
 
 ## Preservation mirror
 

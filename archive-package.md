@@ -10,10 +10,10 @@ upload is prepared.
 
 | File | Size (bytes) | SHA-256 |
 | --- | ---: | --- |
-| `index.html` | 27062 | `94e787cb229376317a353fc543cddf933d0e83ec5e3073f70be6c6ba57a15889` |
-| `album.json` | 5761 | `32c49adc0e19f6c2df411ceee6bf68e0493fff53c4dc62a7ebc87420e65ded8d` |
-| `README.md` | 3049 | `7a5adef581d545ca72c9fd7dffa6ffb5f44ac01613050925e3456a432db6dbbf` |
-| `PLAN.md` | 2478 | `b38b30ed040e9017a5b4b9c58970ab3fe4c81967aa0dee8c36df3e8eccc6bdb6` |
+| `index.html` | 27143 | `8d273cd5abe02081a881cd2520fa5f1eaf36af88ed0cb106eb5b980e4be8767d` |
+| `album.json` | 5721 | `d5188bbe835c8494ad4365f98e4664299f21bc03fdbd2535dc158b68e3ef5c5d` |
+| `README.md` | 3018 | `83e4beba3032546a234c1a009d3460489a529bf42095329cad51fef9bcf2c944` |
+| `PLAN.md` | 2459 | `43de7ade760d7e43746f44bc7a480ceb4d391c49d90c493e57d1bf94ae16b59f` |
 
 ## Staged media bundle
 

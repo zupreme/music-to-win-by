@@ -2,9 +2,9 @@
 
 Artist: `#zupreme`
 
-This workspace folder is the local release package for the album.
+This workspace folder is the local release package and integration kit for the album.
 It is designed to stay editable while the published release is mirrored and
-to remain the source of truth for public hosting.
+to remain the source of truth for the public dossier, metadata, and embed-ready copy.
 
 Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/`.
 
@@ -12,7 +12,8 @@ Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - M
 
 - Keep a clean canonical dossier for the album.
 - Keep `index.html` and `album.json` in lockstep as the canonical public package.
-- Keep the release legible to cyber / IT audiences.
+- Keep the release legible to cyber / IT audiences and useful to builders.
+- Frame the public copy so tech professionals can reuse the album in products, tools, and demos.
 - Mirror the public release cleanly across stable hosts.
 - Keep links to major music networks current and accurate.
 - Keep the archive handoff staged in `archive-package.md`; the playlist,
@@ -27,12 +28,14 @@ Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - M
    - Track notes
    - Release facts
    - Public metadata
+   - Integration cues for builders
    - Live: `https://zupreme.github.io/music-to-win-by/`
 
 2. Zeaun.com
    - Branded landing page
    - Static player shell
    - Fast global delivery
+   - Lightweight front door for sharing or embedding
    - Live: `https://zeaun.com/music/`
 
 3. Internet Archive
@@ -63,11 +66,12 @@ Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - M
   - credits
   - rights note
   - contact / links section
+  - short integration note for builders
 
 ### Phase 3: Landing page
 
 - Keep the Zeaun.com front door crisp, minimal, and easy to cite.
-- Include a track table, album story, and outbound links.
+- Include a track table, album story, outbound links, and a small integration cue that makes reuse obvious.
 
 ### Phase 4: Archive mirror
 
@@ -98,6 +102,7 @@ Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - M
 
 - Keep the language direct and technical.
 - Lean into the album's cybersecurity / operator / focus-work identity.
+- Make the page feel like a soundtrack layer builders can plug into other work.
 - Use the cover art as a visual anchor for the whole release.
 - Add platform links only when they are live and worth the signal.
 - Prefer the plain track 10 filename over the `(1)` duplicate when ingesting.
