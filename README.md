@@ -29,7 +29,7 @@ Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - M
    - Public metadata
    - Live: `https://zupreme.github.io/music-to-win-by/`
 
-2. Cloudflare Pages
+2. Zeaun.com
    - Branded landing page
    - Static player shell
    - Fast global delivery
