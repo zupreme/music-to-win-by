@@ -1,0 +1,4 @@
+# Keep the GitHub repo lightweight; the audio masters stay in the local archive bundle.
+staging/audio/
+*.wav
+

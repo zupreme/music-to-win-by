@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music to Win By - #zupreme</title>
+  <meta
+    name="description"
+    content="Music to Win By is a cyber-focused electronic album by #zupreme, built for deep work, operator discipline, and long technical sessions."
+  />
+  <meta name="theme-color" content="#0b0d12" />
+  <meta property="og:title" content="Music to Win By - #zupreme" />
+  <meta
+    property="og:description"
+    content="A public dossier and landing page for the album Music to Win By."
+  />
+  <meta property="og:type" content="music.album" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b11;
+      --bg-alt: #0d1118;
+      --panel: rgba(14, 18, 28, 0.82);
+      --panel-strong: rgba(19, 24, 36, 0.94);
+      --text: #f6f4ef;
+      --muted: #aab2c2;
+      --muted-2: #7e8797;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --accent: #ff4d2e;
+      --accent-2: #f0c86b;
+      --glow: rgba(255, 77, 46, 0.24);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 18%, rgba(255, 77, 46, 0.12), transparent 22%),
+        radial-gradient(circle at 80% 12%, rgba(240, 200, 107, 0.08), transparent 20%),
+        radial-gradient(circle at 50% 88%, rgba(96, 132, 255, 0.08), transparent 24%),
+        linear-gradient(180deg, #0d1118 0%, #090b10 42%, #06070b 100%);
+      font-family: "Segoe UI", "Trebuchet MS", system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black, transparent 82%);
+      opacity: 0.22;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1.25rem;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: #fff;
+      color: #000;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      z-index: 10;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.25rem 0 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 6px rgba(255, 77, 46, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+      gap: 1.25rem;
+      min-height: 72vh;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--line);
+      border-radius: 2rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
+        radial-gradient(circle at 20% 18%, rgba(255, 77, 46, 0.24), transparent 24%),
+        radial-gradient(circle at 88% 18%, rgba(240, 200, 107, 0.16), transparent 18%),
+        linear-gradient(135deg, #161c2a 0%, #0c1018 48%, #07090d 100%);
+      box-shadow: var(--shadow);
+      align-items: end;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -6rem -6rem auto;
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 77, 46, 0.22), transparent 65%);
+      filter: blur(12px);
+      z-index: -1;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 12ch;
+      font-size: clamp(3.2rem, 10vw, 7rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 1rem;
+      max-width: 44rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .signal-card {
+      display: grid;
+      gap: 0.95rem;
+      align-self: stretch;
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 1.35rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+        rgba(8, 10, 14, 0.56);
+      backdrop-filter: blur(18px);
+    }
+
+    .signal-label,
+    .file-heading {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .signal-card strong {
+      display: block;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .signal-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .signal-list,
+    .file-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .signal-list li {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .signal-list li:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .signal-key {
+      min-width: 5.5rem;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 0.35rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .tag strong {
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    main {
+      display: grid;
+      gap: 1.25rem;
+      padding: 1.25rem 0 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .panel {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      margin: 0 0 0.9rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-2);
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
+    .span-7 {
+      grid-column: span 7;
+    }
+
+    .span-5 {
+      grid-column: span 5;
+    }
+
+    .span-12 {
+      grid-column: 1 / -1;
+    }
+
+    .facts {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .fact {
+      padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+    }
+
+    .fact-label {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .fact-value {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .stack-list,
+    .tracklist,
+    .notes-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stack-list {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .stack-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 0.85rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .stack-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .stack-item strong {
+      display: block;
+      min-width: 9rem;
+      color: var(--text);
+    }
+
+    .stack-item span {
+      color: var(--muted);
+    }
+
+    .file-block {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .file-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .file-item {
+      padding: 0.75rem 0.8rem;
+      border-radius: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-size: 0.93rem;
+    }
+
+    .tracklist {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .track {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1rem;
+      padding: 0.95rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .track:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .track-no {
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .track-title {
+      margin: 0 0 0.2rem;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .track-summary {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .link-card {
+      display: block;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .link-card:hover,
+    .link-card:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255, 77, 46, 0.35);
+      background: linear-gradient(180deg, rgba(255, 77, 46, 0.12), rgba(255, 255, 255, 0.03));
+    }
+
+    .link-title {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .link-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .link-placeholder {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .notes-list {
+      display: grid;
+      gap: 0.7rem;
+      color: var(--muted);
+    }
+
+    .notes-list li {
+      padding-left: 1rem;
+      border-left: 2px solid rgba(255, 77, 46, 0.35);
+    }
+
+    .microcopy {
+      margin-top: 0.9rem;
+      color: var(--muted-2);
+      font-size: 0.9rem;
+    }
+
+    .quote {
+      margin: 0;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid rgba(240, 200, 107, 0.55);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 0.9rem;
+      color: var(--text);
+      font-size: 1.02rem;
+    }
+
+    footer {
+      padding: 0.75rem 0 2rem;
+      color: var(--muted-2);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .span-7,
+      .span-5 {
+        grid-column: 1 / -1;
+      }
+
+      .hero {
+        min-height: 64vh;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        padding: 0.9rem;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        max-width: 10ch;
+      }
+
+      .file-list {
+        grid-template-columns: 1fr;
+      }
+
+      .track {
+        grid-template-columns: 2.6rem 1fr;
+      }
+
+      .stack-item {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicAlbum",
+      "name": "Music to Win By",
+      "byArtist": {
+        "@type": "Person",
+        "name": "#zupreme"
+      },
+      "genre": [
+        "electronic",
+        "focus",
+        "cybersecurity",
+        "work soundtrack"
+      ],
+      "numTracks": 11,
+      "description": "A cyber-focused electronic album built for deep work, operator discipline, and long technical sessions.",
+      "url": "./index.html",
+      "track": [
+        {"@type": "MusicRecording", "position": 1, "name": "System Startup Sequence"},
+        {"@type": "MusicRecording", "position": 2, "name": "MD File"},
+        {"@type": "MusicRecording", "position": 3, "name": "The Agentic Layer"},
+        {"@type": "MusicRecording", "position": 4, "name": "Penetration Testing Mantra"},
+        {"@type": "MusicRecording", "position": 5, "name": "The Encoder Tantric"},
+        {"@type": "MusicRecording", "position": 6, "name": "Flow State Activated"},
+        {"@type": "MusicRecording", "position": 7, "name": "Goal in Focus"},
+        {"@type": "MusicRecording", "position": 8, "name": "The Zen of Lyubov"},
+        {"@type": "MusicRecording", "position": 9, "name": "Good Ole Boy Behind The Paywall"},
+        {"@type": "MusicRecording", "position": 10, "name": "Like a Redteam Cartel"},
+        {"@type": "MusicRecording", "position": 11, "name": "Data Exfiltration"}
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="shell">
+    <div class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span> Music to Win By</div>
+      <div>Canonical dossier draft • public-facing release package</div>
+    </div>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">#zupreme / published release</p>
+        <h1>Music for operators who need to stay locked in.</h1>
+        <div class="hero-copy">
+        <p>
+          <strong>Music to Win By</strong> is the release package for a cyber-leaning electronic
+          album built around deep work, technical focus, and disciplined momentum. This page is
+          the public front door while the canonical metadata stays aligned in the local dossier.
+        </p>
+        <p>
+          The companion single <strong>Pasha x Brain Like Prada</strong> is live too, so the
+          public release story now covers both the album and the single on the major services.
+        </p>
+        <p>
+          The tone is direct by design: useful for humans, easy for crawlers, and consistent across
+          GitHub Pages, Cloudflare Pages, and archive mirrors now that the release is live.
+        </p>
+          <div class="tag-row" aria-label="Album themes">
+            <span class="tag"><strong>Genre</strong> electronic / focus / cybersecurity</span>
+            <span class="tag"><strong>Status</strong> published</span>
+            <span class="tag"><strong>Use case</strong> deep work / incident response / code review</span>
+          </div>
+        </div>
+      </div>
+      <aside class="signal-card" aria-label="Release status">
+        <span class="signal-label">Release signal</span>
+        <strong>Canonical package locked.</strong>
+        <p>
+          The public copy is tuned for citation and mirroring. The main album links are live on the
+          major streaming surfaces, and the canonical web hosts are now populated as well.
+        </p>
+        <ul class="signal-list">
+          <li><span class="signal-key">Stage</span><span>Published</span></li>
+          <li><span class="signal-key">Tracks</span><span>11 in frozen order</span></li>
+          <li><span class="signal-key">Source</span><span>Local dossier and JSON metadata</span></li>
+        </ul>
+      </aside>
+    </header>
+
+    <main id="content">
+      <div class="grid">
+        <section class="panel span-7">
+          <h2>Release facts</h2>
+          <div class="facts">
+            <div class="facts-grid">
+              <div class="fact">
+                <span class="fact-label">Artist</span>
+                <span class="fact-value">#zupreme</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Album</span>
+                <span class="fact-value">Music to Win By</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Status</span>
+                <span class="fact-value">Published</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Canonical stack</span>
+                <span class="fact-value">GitHub Pages / Cloudflare Pages / Internet Archive</span>
+              </div>
+            </div>
+            <p>
+              This page is written to stay citation-friendly. It keeps the copy short enough for
+              public release notes while still carrying the technical identity of the project.
+            </p>
+            <p class="microcopy">
+              Canonical copy lives in the local package and can be mirrored without changing the
+              public tone.
+            </p>
+          </div>
+        </section>
+
+        <aside class="panel span-5">
+          <h2>Distribution stack</h2>
+          <ul class="stack-list">
+            <li class="stack-item">
+              <strong>GitHub Pages</strong>
+              <span>Canonical dossier, metadata, and track notes.</span>
+            </li>
+            <li class="stack-item">
+              <strong>Cloudflare Pages</strong>
+              <span>Minimal front door and static player shell.</span>
+            </li>
+            <li class="stack-item">
+              <strong>Internet Archive</strong>
+              <span>Audio mirror and preservation copy.</span>
+            </li>
+          </ul>
+          <div class="file-block" aria-label="Canonical files">
+            <div class="file-heading">Canonical files</div>
+            <ul class="file-list">
+              <li class="file-item">index.html</li>
+              <li class="file-item">album.json</li>
+              <li class="file-item">README.md</li>
+              <li class="file-item">PLAN.md</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="panel span-12">
+          <h2>Track list</h2>
+          <p>Ordered for progression: boot, discipline, flow, pressure, and exfiltration.</p>
+          <ul class="tracklist" aria-label="Track list">
+            <li class="track">
+              <div class="track-no">01</div>
+              <div>
+                <p class="track-title">System Startup Sequence</p>
+                <p class="track-summary">Boots the release into motion with clean operator energy.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">02</div>
+              <div>
+                <p class="track-title">MD File</p>
+                <p class="track-summary">A documentation-minded cut for people who live in readmes, notes, and runbooks.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">03</div>
+              <div>
+                <p class="track-title">The Agentic Layer</p>
+                <p class="track-summary">Pushes the album into autonomous-work territory with a machine-aware pulse.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">04</div>
+              <div>
+                <p class="track-title">Penetration Testing Mantra</p>
+                <p class="track-summary">Built for the red-team mindset: methodical, repeatable, and focused.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">05</div>
+              <div>
+                <p class="track-title">The Encoder Tantric</p>
+                <p class="track-summary">A high-control groove for encrypting, decoding, and staying in the zone.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">06</div>
+              <div>
+                <p class="track-title">Flow State Activated</p>
+                <p class="track-summary">The pivot point where the album locks into steady execution mode.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">07</div>
+              <div>
+                <p class="track-title">Goal in Focus</p>
+                <p class="track-summary">A discipline track about narrowing attention and removing noise.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">08</div>
+              <div>
+                <p class="track-title">The Zen of Lyubov</p>
+                <p class="track-summary">Adds a human center and emotional clarity without leaving the mission.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">09</div>
+              <div>
+                <p class="track-title">Good Ole Boy Behind The Paywall</p>
+                <p class="track-summary">A sharp-edged critique track with platform and gatekeeping attitude.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">10</div>
+              <div>
+                <p class="track-title">Like a Redteam Cartel</p>
+                <p class="track-summary">The most aggressive industrial-cyber cut in the sequence.</p>
+              </div>
+            </li>
+            <li class="track">
+              <div class="track-no">11</div>
+              <div>
+                <p class="track-title">Data Exfiltration</p>
+                <p class="track-summary">A closing track that leaves the album with motion, tension, and residue.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="panel span-7">
+          <h2>Album statement</h2>
+          <p class="lead">
+            A focused electronic release for operators, builders, and people who need the room to
+            stay quiet while the work gets loud.
+          </p>
+          <p>
+            The record keeps its language technical and direct. It is meant to sit comfortably
+            beside a runbook, a dashboard, or a late-night build log without sounding like a
+            marketing exercise.
+          </p>
+          <p class="quote">
+            Music to Win By is a clean, mirrorable release package designed to travel well across
+            hosts, archives, and search.
+          </p>
+        </section>
+
+        <section class="panel span-5">
+          <h2>Credits and rights</h2>
+          <ul class="notes-list">
+            <li>Artist: #zupreme.</li>
+            <li>Release type: published release.</li>
+            <li>Canonical hosts: GitHub Pages, Cloudflare Pages, and Internet Archive.</li>
+            <li>Machine-readable source: album.json.</li>
+            <li>Outbound links are live where available and remain blank only for unverified hosts.</li>
+          </ul>
+          <p class="microcopy">
+            Rights and contact fields now reflect the published release state.
+            Source repo: <a href="https://github.com/zupreme" rel="noopener noreferrer">github.com/zupreme</a>.
+            Branded host: <a href="https://zeaun.com/music/" rel="noopener noreferrer">zeaun.com/music</a>.
+          </p>
+        </section>
+
+        <section class="panel span-7">
+          <h2>Link registry</h2>
+          <div class="link-grid">
+            <a class="link-card" href="https://zupreme.github.io/music-to-win-by/" rel="noopener noreferrer">
+              <span class="link-title">GitHub Pages</span>
+              <span class="link-meta">Canonical dossier and release metadata.</span>
+              <span class="link-placeholder">https://zupreme.github.io/music-to-win-by/</span>
+            </a>
+            <a class="link-card" href="https://zeaun.com/music/" rel="noopener noreferrer">
+              <span class="link-title">Zeaun.com</span>
+              <span class="link-meta">Front door and static player shell.</span>
+              <span class="link-placeholder">https://zeaun.com/music/</span>
+            </a>
+            <a class="link-card" href="https://archive.org/details/music-to-win-by" rel="noopener noreferrer">
+              <span class="link-title">Internet Archive</span>
+              <span class="link-meta">Audio mirror and preservation record.</span>
+              <span class="link-placeholder">https://archive.org/details/music-to-win-by</span>
+            </a>
+            <a class="link-card" href="https://open.spotify.com/album/2OKmgEUtOEPlj73lQQ1FsI?si=EzJlSCB9SyCTmK169E5lVw&utm_source=copy-link" rel="noopener noreferrer">
+              <span class="link-title">Major networks</span>
+              <span class="link-meta">
+                Spotify, Tidal, Apple Music, Amazon Music
+              </span>
+              <span class="link-placeholder">Album live on the major services</span>
+            </a>
+            <a class="link-card" href="https://open.spotify.com/track/1atzABbsRfbaiGgknhKcre?si=gItUJJCzSqmxjNt3sgMN2A&utm_source=copy-link" rel="noopener noreferrer">
+              <span class="link-title">Single release</span>
+              <span class="link-meta">
+                Spotify, YouTube Music, Tidal, Apple Music, Amazon Music
+              </span>
+              <span class="link-placeholder">Single live on the major services</span>
+            </a>
+            <a class="link-card" href="promo/" rel="noopener noreferrer">
+              <span class="link-title">Promo hub</span>
+              <span class="link-meta">India-ready promo page, release links, and launch checklist.</span>
+              <span class="link-placeholder">Open the promo stack</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="panel span-5">
+          <h2>Editorial notes</h2>
+          <ul class="notes-list">
+            <li>Keep the language direct, technical, and easy to quote.</li>
+            <li>Use the cyber / operator identity without drifting into gimmicks.</li>
+            <li>Leave outbound links blank only when the host is not verified and live.</li>
+            <li>Keep the page consistent with the local canonical metadata package.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      Public dossier. Built to stay legible to humans, search engines, and agents. Source repo:
+      <a href="https://github.com/zupreme" rel="noopener noreferrer">github.com/zupreme</a>.
+      Branded host: <a href="https://zeaun.com/music/" rel="noopener noreferrer">zeaun.com/music</a>.
+      Contact and distribution links now point to the live release surfaces.
+    </footer>
+  </div>
+</body>
+</html>

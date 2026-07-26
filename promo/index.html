@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music to Win By - Promo Hub</title>
+  <meta
+    name="description"
+    content="Promo hub for Music to Win By: live links, India-facing distribution targets, and launch actions."
+  />
+  <style>
+    :root {
+      --bg: #081018;
+      --bg2: #101c2b;
+      --panel: rgba(13, 22, 35, 0.82);
+      --panel-strong: rgba(18, 30, 46, 0.96);
+      --line: rgba(180, 220, 255, 0.16);
+      --text: #ecf4ff;
+      --muted: #a7bad2;
+      --accent: #9ad3ff;
+      --accent2: #7ef0c6;
+      --hot: #ffb463;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(122, 211, 255, 0.18), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(126, 240, 198, 0.12), transparent 28%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color: var(--text);
+      font-family: "Segoe UI", "Trebuchet MS", system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      position: relative;
+      isolation: isolate;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(4, 8, 12, 0.42), rgba(4, 8, 12, 0.62)),
+        url("../staging/art/ZUPREME-Music_to_Win_By-COVER.png") center center / cover no-repeat;
+      filter: saturate(1.08) contrast(1.02);
+      opacity: 0.86;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top, rgba(255, 191, 92, 0.08), transparent 22%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.32));
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 240, 200, 0.18);
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(8, 12, 18, 0.82), rgba(8, 12, 18, 0.72));
+      box-shadow: var(--shadow);
+      padding: 30px;
+      isolation: isolate;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      top: -80px;
+      right: -60px;
+      background: rgba(154, 211, 255, 0.22);
+    }
+    .hero::after {
+      width: 200px;
+      height: 200px;
+      bottom: -90px;
+      left: -40px;
+      background: rgba(126, 240, 198, 0.16);
+    }
+
+    .topline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem, 5vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .lede {
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 14px 0 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .panel {
+      background: rgba(12, 18, 28, 0.72);
+      border: 1px solid rgba(255, 240, 200, 0.14);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .panel strong {
+      color: var(--text);
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin: 0 0 14px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .service {
+      display: block;
+      text-decoration: none;
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid rgba(255, 240, 200, 0.12);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.12));
+      transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+      min-height: 116px;
+    }
+    .service:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 196, 92, 0.44);
+      background:
+        linear-gradient(180deg, rgba(255, 196, 92, 0.18), rgba(255, 255, 255, 0.05));
+    }
+    .service .name {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .service .meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .service .pill {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: #07111a;
+      background: var(--accent);
+      font-weight: 700;
+    }
+    .service.live .pill {
+      background: var(--accent2);
+    }
+    .service.pending .pill {
+      background: #ffd392;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stack .item {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      border: 1px solid rgba(154, 211, 255, 0.18);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 13px 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent), #c3ecff);
+      color: #081018;
+      border-color: transparent;
+    }
+
+    .two-up {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    ul.clean {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .tracklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .track {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+    .track .num {
+      color: var(--accent2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .track .title {
+      display: block;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .track .summary {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    footer {
+      padding: 18px 4px 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .two-up,
+      .tracklist,
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="topline">
+        <div class="badge">Promo Hub / live services / India-ready outreach</div>
+        <div class="badge" id="statusBadge">Loading release data…</div>
+      </div>
+
+      <h1 id="albumTitle">Music to Win By</h1>
+      <p class="lede" id="summary">
+        A cyber-focused electronic release for deep work, operator discipline, and long technical sessions.
+      </p>
+
+      <div class="cta-row" id="primaryCtas">
+        <a class="button primary" href="../index.html">Open release page</a>
+        <a class="button" href="../mockup/">Open mockup</a>
+      </div>
+
+      <div class="hero-grid">
+        <section class="panel">
+          <div class="section-title">
+            <h2>Live release links</h2>
+            <span>Use these for sharing today</span>
+          </div>
+          <div class="service-grid" id="releaseLinks"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">
+            <h2>India distribution</h2>
+            <span>High-signal targets</span>
+          </div>
+          <div class="stack" id="indiaStack">
+            <div class="item">
+              <strong>Distribute through a service that reaches India-facing DSPs.</strong>
+              <div class="small">
+                The release should go out through a distributor that can deliver to JioSaavn, Gaana, Wynk, Spotify, YouTube Music, Apple Music, and Amazon Music.
+              </div>
+              <div class="tag-row">
+                <span class="tag">JioSaavn</span>
+                <span class="tag">Gaana</span>
+                <span class="tag">Wynk</span>
+                <span class="tag">Spotify</span>
+                <span class="tag">YouTube Music</span>
+                <span class="tag">Apple Music</span>
+                <span class="tag">Amazon Music</span>
+              </div>
+            </div>
+            <div class="item">
+              <strong>Pitch the release where India’s music audience already watches.</strong>
+              <div class="small">
+                Prioritize YouTube Shorts, WhatsApp sharing, and editorial pitches to Indian music publications and curators.
+              </div>
+              <ul class="clean">
+                <li>Radioandmusic</li>
+                <li>The Indian Music Diaries</li>
+                <li>Spotify for Artists pitch</li>
+                <li>YouTube Official Artist Channel</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="two-up">
+      <section class="panel">
+        <div class="section-title">
+          <h2>Single</h2>
+          <span id="singleTitle">Pasha x Brain Like Prada</span>
+        </div>
+        <div class="service-grid" id="singleLinks"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Launch checklist</h2>
+          <span>What to do next</span>
+        </div>
+        <ul class="clean" id="checklist">
+          <li>Upload and confirm distributor delivery to India-facing stores.</li>
+          <li>Claim or verify artist profiles on Spotify, YouTube, Apple Music, and Amazon Music.</li>
+          <li>Send the press kit to Indian music blogs and editorial contacts.</li>
+          <li>Post the release hub link through WhatsApp, Instagram, and short-form video.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="panel" style="margin-top:20px;">
+      <div class="section-title">
+        <h2>Track snapshot</h2>
+        <span>Sequence from the release manifest</span>
+      </div>
+      <div class="tracklist" id="tracks"></div>
+    </section>
+
+    <footer id="footer">
+      Built from the live release manifest so you can test, share, and iterate without touching the mockup route.
+      Source repo: github.com/zupreme. Branded host: zeaun.com/music.
+    </footer>
+  </div>
+
+  <script>
+    const placeLink = (url, label, meta, cls = "live") => `
+      <a class="service ${cls}" href="${url || '#'}" target="_blank" rel="noopener noreferrer">
+        <span class="name">${label}</span>
+        <span class="meta">${meta}</span>
+        <span class="pill">${url ? 'Open' : 'Pending'}</span>
+      </a>
+    `;
+
+    const placeTrack = (track) => `
+      <article class="track">
+        <span class="num">Track ${String(track.track).padStart(2, '0')}</span>
+        <span class="title">${track.title}</span>
+        <div class="summary">${track.summary}</div>
+      </article>
+    `;
+
+    async function init() {
+      const res = await fetch("../album.json", { cache: "no-store" });
+      const album = await res.json();
+
+      document.title = `${album.album} - Promo Hub`;
+      document.getElementById("albumTitle").textContent = album.album;
+      document.getElementById("summary").textContent = album.public_summary;
+      document.getElementById("singleTitle").textContent = album.single?.title || "Single";
+      document.getElementById("statusBadge").textContent = `Release status: ${album.release_status}`;
+
+      const releaseMap = [
+        ["spotify", "Spotify", "Playlist pitch + streaming"],
+        ["youtube_music", "YouTube Music", "Shorts + channel discovery"],
+        ["apple_music", "Apple Music", "Listener library presence"],
+        ["amazon_music", "Amazon Music", "Catalog reach"],
+        ["tidal", "Tidal", "High-fidelity audience"],
+      ];
+
+      document.getElementById("releaseLinks").innerHTML = releaseMap
+        .map(([key, label, meta]) => placeLink(album.links?.[key], label, meta, album.links?.[key] ? "live" : "pending"))
+        .join("");
+
+      const singleMap = [
+        ["spotify", "Spotify", "Share the single"],
+        ["youtube_music", "YouTube Music", "Video-friendly discovery"],
+        ["apple_music", "Apple Music", "Library presence"],
+        ["amazon_music", "Amazon Music", "Track delivery"],
+        ["tidal", "Tidal", "Catalog reach"],
+      ];
+
+      document.getElementById("singleLinks").innerHTML = singleMap
+        .map(([key, label, meta]) => placeLink(album.single?.links?.[key], label, meta, album.single?.links?.[key] ? "live" : "pending"))
+        .join("");
+
+      document.getElementById("tracks").innerHTML = (album.tracklist || []).map(placeTrack).join("");
+
+      const primaryCtas = document.getElementById("primaryCtas");
+      primaryCtas.insertAdjacentHTML(
+        "beforeend",
+        album.links?.spotify
+          ? `<a class="button" href="${album.links.spotify}" target="_blank" rel="noopener noreferrer">Open Spotify release</a>`
+          : ""
+      );
+      primaryCtas.insertAdjacentHTML(
+        "beforeend",
+        album.single?.links?.spotify
+          ? `<a class="button" href="${album.single.links.spotify}" target="_blank" rel="noopener noreferrer">Open single on Spotify</a>`
+          : ""
+      );
+
+      document.getElementById("footer").textContent =
+        "Promo hub built from the live release manifest so it can be shared, tested, and updated quickly. Source repo: github.com/zupreme. Branded host: zeaun.com/music.";
+    }
+
+    init().catch((error) => {
+      document.getElementById("statusBadge").textContent = "Promo data failed to load";
+      document.getElementById("summary").textContent = error.message;
+    });
+  </script>
+</body>
+</html>

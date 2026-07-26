@@ -1,0 +1,158 @@
+{
+  "album": "Music to Win By",
+  "artist": "#zupreme",
+  "genre": ["electronic", "focus", "cybersecurity", "work soundtrack"],
+  "themes": [
+    "hacker focus",
+    "operator discipline",
+    "red-team aesthetics",
+    "deep work",
+    "security culture"
+  ],
+  "public_summary": "A cyber-focused electronic album for deep work, operator discipline, and long technical sessions.",
+  "release_status": "published",
+  "canonical_stack": {
+    "dossier": "https://zupreme.github.io/music-to-win-by/",
+    "front_door": "https://zeaun.com/music/",
+    "archive": "https://archive.org/details/music-to-win-by"
+  },
+  "canonical_files": [
+    "index.html",
+    "album.json",
+    "README.md",
+    "PLAN.md"
+  ],
+  "release_notes": [
+    "Track order is frozen.",
+    "The release is published and the live network links are populated for the approved services.",
+    "The public page and local dossier are kept in sync.",
+    "An archive handoff manifest is staged in archive-package.md.",
+    "The staged upload bundle now includes the playlist, audio masters, and cover art.",
+    "Primary album links are live on Spotify, Tidal, Apple Music, and Amazon Music.",
+    "The companion single Pasha x Brain Like Prada is live on Spotify, YouTube Music, Tidal, Apple Music, and Amazon Music."
+  ],
+  "archive_package": {
+    "status": "staged",
+    "manifest": "archive-package.md",
+    "contents": [
+      {
+        "path": "index.html",
+        "size_bytes": 27062,
+        "sha256": "94e787cb229376317a353fc543cddf933d0e83ec5e3073f70be6c6ba57a15889"
+      },
+      {
+        "path": "README.md",
+        "size_bytes": 3049,
+        "sha256": "7a5adef581d545ca72c9fd7dffa6ffb5f44ac01613050925e3456a432db6dbbf"
+      },
+      {
+        "path": "PLAN.md",
+        "size_bytes": 2478,
+        "sha256": "b38b30ed040e9017a5b4b9c58970ab3fe4c81967aa0dee8c36df3e8eccc6bdb6"
+      }
+    ],
+    "notes": [
+      "The staged media bundle now includes the playlist, audio masters, and cover art.",
+      "Keep outbound links blank until they are verified and live.",
+      "Mirror the same title, track order, and release language in every public host."
+    ]
+  },
+  "links": {
+    "github_pages": "https://zupreme.github.io/music-to-win-by/",
+    "cloudflare_pages": "https://zeaun.com/music/",
+    "internet_archive": "https://archive.org/details/music-to-win-by",
+    "bandcamp": "",
+    "soundcloud": "",
+    "youtube_music": "",
+    "spotify": "https://open.spotify.com/album/2OKmgEUtOEPlj73lQQ1FsI?si=EzJlSCB9SyCTmK169E5lVw&utm_source=copy-link",
+    "tidal": "https://tidal.com/album/546515206/u",
+    "apple_music": "https://music.apple.com/us/album/music-to-win-by/6794794865",
+    "amazon_music": "https://music.amazon.com/albums/B0HBMLFF4S?ref=dm_sh_UYY3TUHRrdHE6XDPTPPGtwjBo",
+    "shoutcast": "",
+    "twitch": "",
+    "bigo_live": ""
+  },
+  "single": {
+    "title": "Pasha x Brain Like Prada",
+    "links": {
+      "spotify": "https://open.spotify.com/track/1atzABbsRfbaiGgknhKcre?si=gItUJJCzSqmxjNt3sgMN2A&utm_source=copy-link",
+      "youtube_music": "https://music.youtube.com/watch?v=61fDdvDbpwE&si=m5pOPFLPDthY2wya",
+      "tidal": "https://tidal.com/album/546516306/u",
+      "amazon_music": "https://music.amazon.com/albums/B0HBMPSZGX?do=play&trackAsin=B0HBMMCFY7&ts=1785058212&ref=dm_sh_RhNz0NtWrmA1jDbi5Diir0KrL",
+      "apple_music": "https://music.apple.com/us/album/pasha-x-brain-like-prada/6794795304?i=6794795305"
+    }
+  },
+  "tracklist": [
+    {
+      "track": 1,
+      "title": "System Startup Sequence",
+      "summary": "Boots the release into motion with clean operator energy."
+    },
+    {
+      "track": 2,
+      "title": "MD File",
+      "summary": "A documentation-minded cut for people who live in readmes, notes, and runbooks."
+    },
+    {
+      "track": 3,
+      "title": "The Agentic Layer",
+      "summary": "Pushes the album into autonomous-work territory with a machine-aware pulse."
+    },
+    {
+      "track": 4,
+      "title": "Penetration Testing Mantra",
+      "summary": "Built for the red-team mindset: methodical, repeatable, and focused."
+    },
+    {
+      "track": 5,
+      "title": "The Encoder Tantric",
+      "summary": "A high-control groove for encrypting, decoding, and staying in the zone."
+    },
+    {
+      "track": 6,
+      "title": "Flow State Activated",
+      "summary": "The pivot point where the album locks into steady execution mode."
+    },
+    {
+      "track": 7,
+      "title": "Goal in Focus",
+      "summary": "A discipline track about narrowing attention and removing noise."
+    },
+    {
+      "track": 8,
+      "title": "The Zen of Lyubov",
+      "summary": "Adds a human center and emotional clarity without leaving the mission."
+    },
+    {
+      "track": 9,
+      "title": "Good Ole Boy Behind The Paywall",
+      "summary": "A sharp-edged critique track with platform and gatekeeping attitude."
+    },
+    {
+      "track": 10,
+      "title": "Like a Redteam Cartel",
+      "summary": "The most aggressive industrial-cyber cut in the sequence."
+    },
+    {
+      "track": 11,
+      "title": "Data Exfiltration",
+      "summary": "A closing track that leaves the album with motion, tension, and residue."
+    }
+  ],
+  "credits": {
+    "artist": "#zupreme",
+    "release_type": "published release",
+    "prepared_for": [
+      "GitHub Pages",
+      "Cloudflare Pages",
+      "Internet Archive"
+    ]
+  },
+  "rights": {
+    "status": "published",
+    "note": "Live album and single links are populated for the approved services."
+  },
+  "contact": {
+    "note": "Public contact and release source live under zupreme on GitHub and the Zeaun.com host; mirror the same published release language across GitHub Pages, Zeaun.com/music, and the branded site."
+  }
+}

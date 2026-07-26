@@ -1,0 +1,91 @@
+{
+  "album": "Music to Win By",
+  "artist": "#Zupreme",
+  "credits": "Zeaun \"Zupreme\" Zarrieff",
+  "source_root": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED",
+  "staging_root": "/home/zupreme/.openclaw/workspace/music_to_win_by/staging",
+  "cover_art": "art/ZUPREME-Music_to_Win_By-COVER.png",
+  "playlist": "Zupreme-Music_to_Win_By.m3u",
+  "tracks": [
+    {
+      "track": 1,
+      "title": "System Startup Sequence",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 01 - System Startup Sequence.wav",
+      "staged_file": "audio/01 - System Startup Sequence.wav",
+      "duration_hint": 178
+    },
+    {
+      "track": 2,
+      "title": "MD File",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 02 - MD File.wav",
+      "staged_file": "audio/02 - MD File.wav",
+      "duration_hint": 208
+    },
+    {
+      "track": 3,
+      "title": "The Agentic Layer",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 03 - The Agentic Layer.wav",
+      "staged_file": "audio/03 - The Agentic Layer.wav",
+      "duration_hint": 220
+    },
+    {
+      "track": 4,
+      "title": "Penetration Testing Mantra",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 04 - Penetration Testing Mantra.wav",
+      "staged_file": "audio/04 - Penetration Testing Mantra.wav",
+      "duration_hint": 230
+    },
+    {
+      "track": 5,
+      "title": "The Encoder Tantric",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 05 - The Encoder Tantric.wav",
+      "staged_file": "audio/05 - The Encoder Tantric.wav",
+      "duration_hint": 215
+    },
+    {
+      "track": 6,
+      "title": "Flow State Activated",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 06 - Flow State Activated.wav",
+      "staged_file": "audio/06 - Flow State Activated.wav",
+      "duration_hint": 127
+    },
+    {
+      "track": 7,
+      "title": "Goal in Focus",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 07 - Goal in Focus.wav",
+      "staged_file": "audio/07 - Goal in Focus.wav",
+      "duration_hint": 213
+    },
+    {
+      "track": 8,
+      "title": "The Zen of Lyubov",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 08 - The Zen of Lyubov.wav",
+      "staged_file": "audio/08 - The Zen of Lyubov.wav",
+      "duration_hint": 479
+    },
+    {
+      "track": 9,
+      "title": "Good Ole Boy Behind The Paywall",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 09 - Good Ole Boy Behind The Paywall.wav",
+      "staged_file": "audio/09 - Good Ole Boy Behind The Paywall.wav",
+      "duration_hint": 128
+    },
+    {
+      "track": 10,
+      "title": "Like a Redteam Cartel",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 10 - Like a Redteam Cartel.wav",
+      "staged_file": "audio/10 - Like a Redteam Cartel.wav",
+      "duration_hint": 175
+    },
+    {
+      "track": 11,
+      "title": "Data Exfiltration",
+      "source_file": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED/#Zupreme - Music to Win By - 11 - Data Exfiltration.wav",
+      "staged_file": "audio/11 - Data Exfiltration.wav",
+      "duration_hint": 180
+    }
+  ],
+  "ignored_duplicates": [
+    "#Zupreme - Music to Win By - 10 - Like a Redteam Cartel (1).wav"
+  ]
+}

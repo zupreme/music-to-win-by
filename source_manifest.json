@@ -1,0 +1,13 @@
+{
+  "source_root": "/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERED",
+  "playlist": "Zupreme-Music_to_Win_By.m3u",
+  "cover_art": "ZUPREME-Music_to_Win_By-COVER.png",
+  "artist": "#Zupreme",
+  "credits": "Zeaun \"Zupreme\" Zarrieff",
+  "album": "Music to Win By",
+  "duplicate_rule": {
+    "track": 10,
+    "prefer": "Zupreme - Music to Win By - 10 - Like a Redteam Cartel.wav",
+    "ignore": "Zupreme - Music to Win By - 10 - Like a Redteam Cartel (1).wav"
+  }
+}
