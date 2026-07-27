@@ -11,7 +11,7 @@ const PAGE_ORDER = [
 ];
 
 const PAGE_TITLES = {
-  home: "Music to Win By - Public Release",
+  home: "Music to Win By - Public Mockup",
   dossier: "Music to Win By - GitHub Pages Release",
   "front-door": "Music to Win By - Cloudflare Pages Release",
   archive: "Music to Win By - Internet Archive Release",
@@ -21,7 +21,7 @@ const PAGE_TITLES = {
 
 const PAGE_BLURBS = {
   home:
-    "A browseable public stack: overview, dossier, landing page, archive mirror, metadata, and future distribution slots.",
+    "A browseable public stack: overview, dossier, landing page, archive mirror, metadata, and music network links.",
   dossier:
     "This is the repo-style canonical dossier view intended for GitHub Pages.",
   "front-door":
@@ -145,7 +145,7 @@ function homePage(album) {
     ["GitHub Pages dossier", "Canonical docs, repo-style layout, and release notes.", "dossier.html"],
     ["Cloudflare Pages front door", "Polished landing page with the cover and the quick pitch.", "front-door.html"],
     ["Internet Archive mirror", "Preservation-first item page and upload bundle view.", "archive.html"],
-    ["Network link matrix", "Future album URLs and discovery slots in one place.", "networks.html"],
+    ["Music network links", "Live album URLs and discovery slots in one place.", "networks.html"],
     ["Metadata surface", "Structured data, citations, sitemap, and feed strategy.", "metadata.html"],
   ];
   const pages = linkCards
@@ -262,18 +262,45 @@ function homePage(album) {
 
     <section class="section">
       ${sectionTitle(
-        "Future links",
-        "These are the eventual outbound slots. They stay blank only for hosts that are not yet verified and live."
+        "Music Network Links",
+        "These are the live outbound slots for the release. Only services that are not verified stay blank."
       )}
       <div class="grid-4">
-        ${(album.links ? Object.entries(album.links) : [])
+        ${[
+          ["GitHub Pages", "canonical dossier", album.links?.github_pages || "", "live"],
+          ["Cloudflare Pages", "primary landing page", album.links?.cloudflare_pages || "", "live"],
+          ["Internet Archive", "preservation mirror", album.links?.internet_archive || "", "live"],
+          ["Bandcamp", "commercial music storefront", album.links?.bandcamp || "", "pending"],
+          ["SoundCloud", "streaming / preview surface", album.links?.soundcloud || "", "pending"],
+          ["YouTube Music", "catalog presence", album.links?.youtube_music || "", "pending"],
+          ["Spotify", "listener access", album.links?.spotify || "", "live"],
+          ["Tidal", "listener access", album.links?.tidal || "", "live"],
+          ["Apple Music", "listener access", album.links?.apple_music || "", "live"],
+          ["Amazon Music", "listener access", album.links?.amazon_music || "", "live"],
+          ["Shoutcast", "always-on radio layer", album.links?.shoutcast || "", "pending"],
+          ["Twitch", "live stream surface", album.links?.twitch || "", "pending"],
+        ]
           .map(
-            ([key, value]) => `
+            ([key, role, href, state]) => `
               <div class="card">
-                <h3>${escapeHtml(key.replaceAll("_", " "))}</h3>
-                <p>${escapeHtml(value || "placeholder")}</p>
+                <h3>${escapeHtml(key)}</h3>
+                <p>${escapeHtml(role)}</p>
                 <div class="divider"></div>
-                <span class="status ${statusClass(value ? "live" : "placeholder")}">${value ? "live slot" : "placeholder"}</span>
+                ${
+                  href
+                    ? `
+                      <a class="network-url" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">
+                        ${escapeHtml(href)}
+                      </a>
+                      <div class="divider"></div>
+                      <a class="button primary" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Open album</a>
+                    `
+                    : `<span class="empty">Not live yet</span>`
+                }
+                <div class="divider"></div>
+                <span class="status ${statusClass(state === "live" ? "live" : "placeholder")}">${
+                  state === "live" ? "live slot" : "placeholder"
+                }</span>
               </div>
             `
           )
@@ -593,12 +620,18 @@ function networksPage(album) {
                 <p>
                   ${state === "live"
                     ? "This already has a verified public URL and should stay visible."
-                    : "This surface is not yet published, so the button points to the closest working service entry point."}
+                    : "This surface is not yet published, so the slot stays inert until it is live."}
                 </p>
                 <div class="music-links" style="margin-top: 1rem;">
                   ${
                     href
-                      ? `<a class="button primary" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Open album</a>`
+                      ? `
+                        <a class="network-url" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">
+                          ${escapeHtml(href)}
+                        </a>
+                        <div class="divider"></div>
+                        <a class="button primary" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Open album</a>
+                      `
                       : `<span class="empty">Not live yet</span>`
                   }
                 </div>

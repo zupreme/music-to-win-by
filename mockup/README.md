@@ -1,4 +1,4 @@
-# Music to Win By - Public Release
+# Music to Win By - Public Mockup
 
 Browse from:
 

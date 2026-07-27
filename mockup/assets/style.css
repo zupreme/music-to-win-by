@@ -237,6 +237,8 @@ img {
 .section p {
   margin: 0;
   color: var(--muted);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .section {
@@ -616,10 +618,13 @@ img {
 }
 
 .matrix-card {
+  display: grid;
+  gap: 0.4rem;
   padding: 1rem;
   border-radius: 1.1rem;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
+  min-width: 0;
 }
 
 .matrix-card h3 {
@@ -639,6 +644,23 @@ img {
 .matrix-card p {
   margin-top: 0.55rem;
   color: var(--muted);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.55;
+}
+
+.matrix-card .network-url {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+.matrix-card .network-url:hover,
+.matrix-card .network-url:focus-visible {
+  color: var(--accent-2);
 }
 
 .matrix-card .empty {
@@ -649,6 +671,13 @@ img {
   color: #ffd99c;
   background: rgba(255, 217, 156, 0.06);
   display: inline-flex;
+  max-width: 100%;
+}
+
+.matrix-card .button,
+.matrix-card .empty {
+  width: fit-content;
+  max-width: 100%;
 }
 
 .split-note {
