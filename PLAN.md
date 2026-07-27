@@ -15,7 +15,7 @@ Source staging lives in `/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERE
 - GitHub Pages
 - Static dossier with album facts, track notes, and contact/link section
 - Developer-facing integration cues for technical teams
-- Root playlist plus `audio/` bundle with the 11 WAV masters
+- `audio/` bundle with the 11 WAV masters plus the playlist stored beside it
 - Live: `https://zupreme.github.io/music-to-win-by/`
 
 ### Public landing page
@@ -64,8 +64,8 @@ Source staging lives in `/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERE
 - The homepage copy is published and mirrored in `index.html`, `album.json`, `README.md`, and `PLAN.md`.
 - The homepage copy now speaks to builders, integrators, and technical audiences instead of generic release promotion.
 - The canonical package now centers `index.html`, `album.json`, `README.md`, and `PLAN.md`.
-- The GitHub Pages repo now also carries the root `Zupreme-Music_to_Win_By.m3u`
-  playlist plus the `audio/` bundle with the 11 WAV masters.
+- The GitHub Pages repo now also carries the `audio/` bundle with the 11 WAV
+  masters plus the `audio/Zupreme-Music_to_Win_By.m3u` playlist.
 - Developer kits now live under `developer-kits/` with ready-made examples for
   JavaScript, Python, Go, PowerShell, and CSS.
 - Live outbound links are populated for the approved hosts and services.

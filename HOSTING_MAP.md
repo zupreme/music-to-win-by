@@ -33,8 +33,8 @@ This is the clean public layout for the published release.
 - Use hyphenated slugs for public URLs: `music-to-win-by`
 - Avoid underscores in public paths unless a legacy asset already depends on them
 - Keep the same title, artist name, and release status everywhere
-- Keep `Zupreme-Music_to_Win_By.m3u` at the repo root and point it at `audio/`
-  so the bundle stays portable
-- Keep the playable bundle in `audio/` with the 11 WAV masters only
+- Keep `audio/Zupreme-Music_to_Win_By.m3u` beside `audio/` so the bundle stays
+  portable
+- Keep the playable bundle in `audio/` with the 11 WAV masters plus the playlist
 - Keep the developer kit branches in `developer-kits/`
 - Current live music path: `https://zeaun.com/music/`

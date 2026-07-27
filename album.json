@@ -26,7 +26,7 @@
     "Track order is frozen.",
     "The release is published and the live network links are populated for the approved services.",
     "The public page and local dossier are kept in sync.",
-    "The GitHub Pages repo carries the root playlist plus the playable audio bundle under audio/ with the 11 WAV masters.",
+    "The GitHub Pages repo carries the playable audio bundle under audio/ with the 11 WAV masters plus the playlist beside it.",
     "The GitHub Pages repo also carries developer kits for JavaScript, Python, Go, PowerShell, and CSS integrations.",
     "An archive handoff manifest is staged in archive-package.md.",
     "The staged upload bundle now includes the playlist, audio masters, and cover art.",
@@ -61,7 +61,7 @@
   },
   "links": {
     "github_pages": "https://zupreme.github.io/music-to-win-by/",
-    "github_pages_playlist": "https://zupreme.github.io/music-to-win-by/Zupreme-Music_to_Win_By.m3u",
+    "github_pages_playlist": "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u",
     "github_pages_audio": "https://zupreme.github.io/music-to-win-by/audio/",
     "github_pages_dev_kits": "https://zupreme.github.io/music-to-win-by/developer-kits/",
     "cloudflare_pages": "https://zeaun.com/music/",

@@ -9,7 +9,7 @@ music in web, app, and desktop projects.
 
 ## Bundle layout
 
-- `../Zupreme-Music_to_Win_By.m3u` - root playlist for the GitHub Pages copy
+- `../audio/Zupreme-Music_to_Win_By.m3u` - playlist stored beside the GitHub Pages audio bundle
 - `https://zupreme.github.io/music-to-win-by/audio/` - the canonical hosted audio bundle
 
 ## Branches
@@ -31,5 +31,5 @@ music in web, app, and desktop projects.
 ## Public URLs
 
 - Dossier: `https://zupreme.github.io/music-to-win-by/`
-- Playlist: `https://zupreme.github.io/music-to-win-by/Zupreme-Music_to_Win_By.m3u`
+- Playlist: `https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u`
 - Audio bundle: `https://zupreme.github.io/music-to-win-by/audio/`

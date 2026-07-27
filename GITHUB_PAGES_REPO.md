@@ -19,8 +19,8 @@ music-to-win-by/
   PLAN.md
   archive-package.md
   promo/
-  Zupreme-Music_to_Win_By.m3u
   audio/
+    Zupreme-Music_to_Win_By.m3u
   developer-kits/
   mockup/
   staging/
@@ -32,9 +32,9 @@ music-to-win-by/
 - `index.html` is the canonical public dossier.
 - `album.json` is the machine-readable source of truth.
 - `promo/` is the shareable landing stack.
-- `Zupreme-Music_to_Win_By.m3u` stays at the repo root and points into
-  `audio/` so the playlist stays relative-path portable.
-- `audio/` carries the playable bundle: 11 WAV masters only.
+- `audio/Zupreme-Music_to_Win_By.m3u` lives beside the WAV masters so the
+  playable bundle stays self-contained.
+- `audio/` carries the playable bundle: 11 WAV masters plus the playlist.
 - `developer-kits/` carries the ready-made cross-language playback examples.
 - `mockup/` is the local presentation layer and can be omitted from the public repo if you want a slimmer public footprint.
 - `.nojekyll` is recommended so GitHub Pages serves the static files without Jekyll processing.
