@@ -1,4 +1,4 @@
-const COVER = "../github-pages/audio/COVER.png";
+const COVER = "assets/COVER.png";
 const PLIST = "https://zupreme.github.io/music-to-win-by/github-pages/audio/Zupreme-Music_to_Win_By.m3u";
 
 const PAGE_ORDER = [
@@ -496,7 +496,7 @@ function frontDoorPage(album) {
 function archivePage(album) {
   const staged = [
     ["Playlist", PLIST],
-    ["Cover art", "../github-pages/audio/COVER.png"],
+    ["Cover art", "assets/COVER.png"],
     ["Audio masters", "https://zupreme.github.io/music-to-win-by/audio/"],
   ];
   const content = `

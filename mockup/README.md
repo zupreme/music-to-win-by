@@ -9,5 +9,5 @@ Browse from:
 - `networks.html` - major network link matrix
 - `metadata.html` - structured data and citation surface
 
-The release shell reads from `../album.json` and the staged cover art in
-`../staging/art/`.
+The release shell reads from `../album.json` and the cover art in
+`assets/COVER.png`.
