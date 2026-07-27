@@ -11,12 +11,12 @@ const PAGE_ORDER = [
 ];
 
 const PAGE_TITLES = {
-  home: "Music to Win By - Public Mockup",
-  dossier: "Music to Win By - GitHub Pages Mockup",
-  "front-door": "Music to Win By - Cloudflare Pages Mockup",
-  archive: "Music to Win By - Internet Archive Mockup",
-  networks: "Music to Win By - Link Matrix Mockup",
-  metadata: "Music to Win By - Metadata Mockup",
+  home: "Music to Win By - Public Release",
+  dossier: "Music to Win By - GitHub Pages Release",
+  "front-door": "Music to Win By - Cloudflare Pages Release",
+  archive: "Music to Win By - Internet Archive Release",
+  networks: "Music to Win By - Link Matrix Release",
+  metadata: "Music to Win By - Metadata Release",
 };
 
 const PAGE_BLURBS = {
@@ -124,13 +124,13 @@ function pageShell(page, album, content) {
       <header class="topbar">
         <a class="brand" href="index.html">
           <span class="brand-mark"></span>
-          <span>Music to Win By / Mockup</span>
+          <span>Music to Win By / Release</span>
         </a>
         <nav class="nav" aria-label="Primary">${pageNav(page)}</nav>
       </header>
       ${content}
       <footer class="footer">
-        <div>${escapeHtml(album.artist)} / ${escapeHtml(album.album)} / local mockup</div>
+        <div>${escapeHtml(album.artist)} / ${escapeHtml(album.album)} / local release shell</div>
         <div>${escapeHtml(PAGE_BLURBS[page] || PAGE_BLURBS.home)}</div>
       </footer>
     </div>
@@ -164,13 +164,13 @@ function homePage(album) {
   const content = `
     <section class="hero hero-split">
       <div class="hero-copy">
-        <p class="eyebrow">Public-facing project mockup</p>
+        <p class="eyebrow">Public-facing project release</p>
         <h1 class="title">${escapeHtml(album.album)}</h1>
         <p>
-          A browseable local simulation of the full public release stack for
-          ${escapeHtml(album.album)} by ${escapeHtml(album.artist)}. This mockup shows
-          how the project can read on GitHub Pages, Cloudflare Pages, the Internet Archive,
-          and the surrounding discovery surfaces once the album is approved for upload.
+          A browseable, full public release stack for
+          ${escapeHtml(album.album)} by ${escapeHtml(album.artist)}. This shows how the
+          project can read on GitHub Pages, Cloudflare Pages, the Internet Archive, and the
+          surrounding discovery surfaces.
         </p>
         <div class="meta-row">
           ${badge("Tracks", String((album.tracklist || []).length))}
@@ -296,7 +296,7 @@ function dossierPage(album) {
   ];
   const content = `
     <section class="hero">
-      <p class="eyebrow">GitHub Pages mockup</p>
+      <p class="eyebrow">GitHub Pages release</p>
       <h1 class="title" style="max-width: 14ch;">Repo-Style Dossier</h1>
       <div class="repo-frame">
         <div class="repo-pane">
@@ -383,7 +383,7 @@ function frontDoorPage(album) {
   const content = `
     <section class="hero hero-split">
       <div class="hero-copy">
-        <p class="eyebrow">Cloudflare Pages mockup</p>
+        <p class="eyebrow">Cloudflare Pages release</p>
         <h1 class="title">${escapeHtml(album.album)}</h1>
         <p>
           This is the polished public front door: a visually stronger landing page that
@@ -474,7 +474,7 @@ function archivePage(album) {
   ];
   const content = `
     <section class="hero">
-      <p class="eyebrow">Internet Archive mockup</p>
+      <p class="eyebrow">Internet Archive release</p>
       <h1 class="title" style="max-width: 13ch;">Preservation Mirror</h1>
       <div class="grid-2">
         <div class="card">
@@ -649,7 +649,7 @@ function metadataPage(album) {
   const content = `
     <section class="hero hero-split">
       <div class="hero-copy">
-        <p class="eyebrow">Structured metadata mockup</p>
+        <p class="eyebrow">Structured metadata release</p>
         <h1 class="title" style="max-width: 13ch;">Citation Surface</h1>
         <p>
           This page shows the structured-data posture that helps search engines, crawlers,
@@ -743,7 +743,7 @@ async function main() {
 main().catch((error) => {
   const app = document.getElementById("app");
   if (app) {
-    app.innerHTML = `<div class="page"><section class="section"><h2>Mockup error</h2><p>${escapeHtml(error.message)}</p></section></div>`;
+    app.innerHTML = `<div class="page"><section class="section"><h2>Release error</h2><p>${escapeHtml(error.message)}</p></section></div>`;
   }
   console.error(error);
 });

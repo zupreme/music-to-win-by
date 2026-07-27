@@ -1,4 +1,4 @@
-# Music to Win By - Public Mockup
+# Music to Win By - Public Release
 
 Browse from:
 
@@ -9,6 +9,5 @@ Browse from:
 - `networks.html` - major network link matrix
 - `metadata.html` - structured data and citation surface
 
-The mockup reads from `../album.json` and the staged cover art in
+The release shell reads from `../album.json` and the staged cover art in
 `../staging/art/`.
-
