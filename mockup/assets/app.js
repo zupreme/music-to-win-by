@@ -1,5 +1,5 @@
 const COVER = "../staging/art/ZUPREME-Music_to_Win_By-COVER.png";
-const PLIST = "../staging/Zupreme-Music_to_Win_By.m3u";
+const PLIST = "../github-pages/audio/Zupreme-Music_to_Win_By.m3u";
 
 const PAGE_ORDER = [
   ["home", "Overview"],

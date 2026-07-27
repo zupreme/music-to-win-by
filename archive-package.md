@@ -19,7 +19,7 @@ upload is prepared.
 
 | File | Size (bytes) | SHA-256 |
 | --- | ---: | --- |
-| `staging/Zupreme-Music_to_Win_By.m3u` | 870 | `311406d62c01e6fbb164cc6542727639aa1a9f86343dcbbd0af1ebdafc43e53c` |
+| `github-pages/audio/Zupreme-Music_to_Win_By.m3u` | 870 | `311406d62c01e6fbb164cc6542727639aa1a9f86343dcbbd0af1ebdafc43e53c` |
 | `staging/art/ZUPREME-Music_to_Win_By-COVER.png` | 2699146 | `f8eb0923fc4723d87d33d20cf3d25323fec0fd81a76e4e4abcad3e517b0bc6d7` |
 | `staging/audio/01 - System Startup Sequence.wav` | 53860040 | `95a75fb84f2809f2f25386783c2bc43484ad7c7155b7389e9d83a7c2daadb66d` |
 | `staging/audio/02 - MD File.wav` | 62661272 | `dbb044dd35ca4df04d0dd605bc4b5678e123b906c68a066581d5ee9453a0e0f2` |
