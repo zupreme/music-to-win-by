@@ -10,8 +10,6 @@ Use this branch when you want the album to run as browser background music.
 
 - Base audio URL:
   `https://zupreme.github.io/music-to-win-by/audio/`
-- Local bundle path:
-  `./audio/`
 
 ## Suggested use
 
@@ -20,7 +18,7 @@ Use this branch when you want the album to run as browser background music.
   import { createBackgroundMusic } from "./background-music.js";
 
   const player = createBackgroundMusic({
-    baseUrl: "./audio/",
+    baseUrl: "https://zupreme.github.io/music-to-win-by/audio/",
     autoPlay: false,
     volume: 0.55,
   });

@@ -1,7 +1,7 @@
 # Go Branch
 
 Use this branch when a Go service, worker, or desktop wrapper should play the
-album from a local `audio/` folder.
+album from the hosted GitHub Pages bundle or a local mirror.
 
 ## File
 
@@ -14,11 +14,12 @@ album from a local `audio/` folder.
 ## Suggested use
 
 ```go
-player := &Player{AudioDir: "./audio", Loop: true, Volume: 60}
+player := &Player{Loop: true, Volume: 60}
 if err := player.Run(context.Background()); err != nil {
     log.Fatal(err)
 }
 ```
 
-The helper walks the 11-track album in order and reuses the local `audio/`
-folder so the bundle stays portable.
+By default the helper pulls from the hosted Pages audio URL and caches tracks
+under the local user cache directory. Set `AudioDir` to a local folder if you
+already mirrored the bundle.

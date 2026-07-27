@@ -1,7 +1,8 @@
 # PowerShell Branch
 
 Use this branch on Windows when a desktop app or script wants to hand the
-album off to Windows Media Player.
+album off to Windows Media Player. The script defaults to the hosted Pages
+audio bundle and caches downloads automatically.
 
 ## File
 
@@ -10,8 +11,9 @@ album off to Windows Media Player.
 ## Suggested use
 
 ```powershell
-.\background-music.ps1 -AudioRoot ".\audio" -Volume 65
+.\background-music.ps1 -Volume 65
 ```
 
-The script builds a relative playlist from the local `audio/` folder so a
-copied album bundle stays portable.
+Pass a local path to `-AudioSource` if you already mirrored the files. When
+left alone, the script downloads each track from the GitHub Pages audio URL
+into a cache folder before building the playlist.

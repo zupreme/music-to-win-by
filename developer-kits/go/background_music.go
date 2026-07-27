@@ -2,12 +2,16 @@ package music
 
 import (
 	"context"
+	"io"
 	"errors"
 	"fmt"
+	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strconv"
+	"strings"
 )
 
 type Track struct {
@@ -30,8 +34,11 @@ var DefaultTracks = []Track{
 	{Number: 11, Title: "Data Exfiltration", File: "11 - Data Exfiltration.wav"},
 }
 
+const DefaultAudioBaseURL = "https://zupreme.github.io/music-to-win-by/audio/"
+
 type Player struct {
 	AudioDir string
+	CacheDir string
 	Command  string
 	Volume   int
 	Loop     bool
@@ -52,12 +59,89 @@ func (p *Player) commandName() string {
 	return "ffplay"
 }
 
-func (p *Player) resolve(track Track) (string, error) {
-	if p.AudioDir == "" {
-		return "", errors.New("audio directory is required")
+func (p *Player) source() string {
+	if p.AudioDir != "" {
+		return p.AudioDir
 	}
-	path := filepath.Join(p.AudioDir, track.File)
-	if _, err := os.Stat(path); err != nil {
+	return DefaultAudioBaseURL
+}
+
+func (p *Player) isRemoteSource() bool {
+	source := p.source()
+	return strings.HasPrefix(source, "http://") || strings.HasPrefix(source, "https://")
+}
+
+func (p *Player) cacheRoot() (string, error) {
+	if p.CacheDir != "" {
+		return p.CacheDir, nil
+	}
+	dir, err := os.UserCacheDir()
+	if err != nil || dir == "" {
+		return filepath.Join(os.TempDir(), "music-to-win-by"), nil
+	}
+	return filepath.Join(dir, "music-to-win-by"), nil
+}
+
+func (p *Player) remoteURL(track Track) (string, error) {
+	base, err := url.Parse(p.source())
+	if err != nil {
+		return "", err
+	}
+	if !strings.HasSuffix(base.Path, "/") {
+		base.Path += "/"
+	}
+	ref := &url.URL{Path: track.File}
+	return base.ResolveReference(ref).String(), nil
+}
+
+func (p *Player) resolve(track Track) (string, error) {
+	source := p.source()
+	if source == "" {
+		return "", errors.New("audio source is required")
+	}
+
+	if !p.isRemoteSource() {
+		path := filepath.Join(source, track.File)
+		if _, err := os.Stat(path); err != nil {
+			return "", err
+		}
+		return path, nil
+	}
+
+	cacheRoot, err := p.cacheRoot()
+	if err != nil {
+		return "", err
+	}
+	path := filepath.Join(cacheRoot, track.File)
+	if _, err := os.Stat(path); err == nil {
+		return path, nil
+	}
+
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return "", err
+	}
+
+	remoteURL, err := p.remoteURL(track)
+	if err != nil {
+		return "", err
+	}
+
+	resp, err := http.Get(remoteURL)
+	if err != nil {
+		return "", err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return "", fmt.Errorf("download %s: %s", track.Title, resp.Status)
+	}
+
+	out, err := os.Create(path)
+	if err != nil {
+		return "", err
+	}
+	defer out.Close()
+
+	if _, err := io.Copy(out, resp.Body); err != nil {
 		return "", err
 	}
 	return path, nil

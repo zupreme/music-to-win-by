@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from threading import Event, Thread
 from time import sleep
 from typing import Sequence
+from urllib.parse import quote, urljoin
+from urllib.request import urlopen
 
 try:
     import pygame
@@ -33,19 +36,23 @@ TRACKS: tuple[Track, ...] = (
     Track(11, "Data Exfiltration", "11 - Data Exfiltration.wav"),
 )
 
+DEFAULT_AUDIO_BASE_URL = "https://zupreme.github.io/music-to-win-by/audio/"
+
 
 class BackgroundMusic:
     def __init__(
         self,
-        audio_dir: Path | str = "audio",
+        audio_dir: Path | str = DEFAULT_AUDIO_BASE_URL,
         tracks: Sequence[Track] = TRACKS,
         volume: float = 0.65,
         loop: bool = True,
+        cache_dir: Path | str | None = None,
     ) -> None:
-        self.audio_dir = Path(audio_dir)
+        self.audio_dir = audio_dir
         self.tracks = tuple(tracks)
         self.volume = max(0.0, min(1.0, volume))
         self.loop = loop
+        self.cache_dir = Path(cache_dir) if cache_dir is not None else default_cache_dir()
         self._index = 0
         self._paused = False
         self._stop = Event()
@@ -54,13 +61,36 @@ class BackgroundMusic:
         pygame.mixer.init()
         pygame.mixer.music.set_volume(self.volume)
 
-    def _path_for(self, index: int) -> Path:
-        return self.audio_dir / self.tracks[index].file_name
+    def _is_remote_source(self) -> bool:
+        return isinstance(self.audio_dir, str) and self.audio_dir.startswith(("http://", "https://"))
+
+    def _remote_url_for(self, index: int) -> str:
+        base_url = str(self.audio_dir)
+        return urljoin(base_url if base_url.endswith("/") else f"{base_url}/", quote(self.tracks[index].file_name))
+
+    def _cache_path_for(self, index: int) -> Path:
+        return self.cache_dir / self.tracks[index].file_name
+
+    def _local_path_for(self, index: int) -> Path:
+        if self._is_remote_source():
+            return self._cache_path_for(index)
+        return Path(self.audio_dir) / self.tracks[index].file_name
+
+    def _ensure_cached(self, index: int) -> Path:
+        path = self._local_path_for(index)
+        if path.exists():
+            return path
+
+        if not self._is_remote_source():
+            raise FileNotFoundError(path)
+
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with urlopen(self._remote_url_for(index)) as response, path.open("wb") as handle:
+            handle.write(response.read())
+        return path
 
     def _load(self, index: int) -> None:
-        path = self._path_for(index)
-        if not path.exists():
-            raise FileNotFoundError(path)
+        path = self._ensure_cached(index)
         pygame.mixer.music.load(str(path))
         pygame.mixer.music.set_volume(self.volume)
 
@@ -117,12 +147,17 @@ class BackgroundMusic:
         return self.volume
 
 
-def default_audio_dir() -> Path:
-    return Path(__file__).resolve().parent / "audio"
+def default_audio_source() -> str:
+    return DEFAULT_AUDIO_BASE_URL
+
+
+def default_cache_dir() -> Path:
+    cache_root = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))
+    return cache_root / "music-to-win-by"
 
 
 if __name__ == "__main__":  # pragma: no cover - example entrypoint
-    player = BackgroundMusic(default_audio_dir())
+    player = BackgroundMusic()
     player.play()
     try:
         while True:

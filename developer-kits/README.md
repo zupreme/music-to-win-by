@@ -10,7 +10,7 @@ music in web, app, and desktop projects.
 ## Bundle layout
 
 - `../Zupreme-Music_to_Win_By.m3u` - root playlist for the GitHub Pages copy
-- `../audio/` - the 11 WAV masters for the playable bundle
+- `https://zupreme.github.io/music-to-win-by/audio/` - the canonical hosted audio bundle
 
 ## Branches
 
@@ -23,8 +23,8 @@ music in web, app, and desktop projects.
 ## Usage
 
 - Copy the branch you want into your project.
-- Point the base path at the local `audio/` folder or the GitHub Pages audio
-  URL.
+- Point the base path at the GitHub Pages audio URL by default, or override it
+  with a local mirror if you have one.
 - Keep the track order frozen unless you intentionally want a different set
   of cues.
 

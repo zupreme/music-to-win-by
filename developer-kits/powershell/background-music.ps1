@@ -1,5 +1,7 @@
 param(
-  [string]$AudioRoot = (Join-Path $PSScriptRoot "audio"),
+  [Alias("AudioRoot")]
+  [string]$AudioSource = "https://zupreme.github.io/music-to-win-by/audio/",
+  [string]$CacheRoot = (Join-Path ([System.IO.Path]::GetTempPath()) "MusicToWinBy"),
   [int]$Volume = 65,
   [bool]$Loop = $true,
   [bool]$Shuffle = $false
@@ -21,15 +23,12 @@ $Tracks = @(
 
 function Start-MusicToWinBy {
   param(
-    [string]$Root = $AudioRoot,
+    [string]$Source = $AudioSource,
+    [string]$TargetCacheRoot = $CacheRoot,
     [int]$TargetVolume = $Volume,
     [bool]$TargetLoop = $Loop,
     [bool]$TargetShuffle = $Shuffle
   )
-
-  if (-not (Test-Path $Root)) {
-    throw "Audio root not found: $Root"
-  }
 
   $player = New-Object -ComObject WMPlayer.OCX
   $player.settings.volume = [Math]::Max(0, [Math]::Min(100, $TargetVolume))
@@ -38,9 +37,20 @@ function Start-MusicToWinBy {
 
   $playlist = $player.playlistCollection.newPlaylist("Music to Win By")
   foreach ($track in $Tracks) {
-    $path = Join-Path $Root $track.File
-    if (-not (Test-Path $path)) {
-      throw "Missing track: $path"
+    if ($Source -match '^https?://') {
+      $cachedPath = Join-Path $TargetCacheRoot $track.File
+      if (-not (Test-Path $cachedPath)) {
+        New-Item -ItemType Directory -Force -Path (Split-Path $cachedPath -Parent) | Out-Null
+        $uri = [System.Uri]::new(($Source.TrimEnd('/') + '/' + [System.Uri]::EscapeDataString($track.File)))
+        Invoke-WebRequest -Uri $uri.AbsoluteUri -OutFile $cachedPath
+      }
+      $path = $cachedPath
+    }
+    else {
+      $path = Join-Path $Source $track.File
+      if (-not (Test-Path $path)) {
+        throw "Missing track: $path"
+      }
     }
     $media = $player.newMedia($path)
     [void]$playlist.appendItem($media)
