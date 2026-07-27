@@ -169,7 +169,7 @@ function homePage(album) {
         <p>
           A browseable, full public release stack for
           ${escapeHtml(album.album)} by ${escapeHtml(album.artist)}. This shows how the
-          project can read on GitHub Pages, Cloudflare Pages, the Internet Archive, and the
+          project can read on GitHub Pages, Zeaun.com, the Internet Archive, and the
           surrounding discovery surfaces.
         </p>
         <div class="meta-row">
@@ -393,7 +393,7 @@ It stays aligned with the public landing page and the archive mirror.</div>
         </div>
         <div class="card">
           <h3>Mirrorable</h3>
-          <p>The same markdown and HTML can be copied to GitHub Pages, Cloudflare Pages, or a static archive.</p>
+          <p>The same markdown and HTML can be copied to GitHub Pages, Zeaun.com, or a static archive.</p>
         </div>
         <div class="card">
           <h3>Legible to agents</h3>
@@ -410,7 +410,7 @@ function frontDoorPage(album) {
   const content = `
     <section class="hero hero-split">
       <div class="hero-copy">
-        <p class="eyebrow">Cloudflare Pages release</p>
+        <p class="eyebrow">Zeaun.com front door</p>
         <h1 class="title">${escapeHtml(album.album)}</h1>
         <p>
           This is the polished public front door: a visually stronger landing page that
