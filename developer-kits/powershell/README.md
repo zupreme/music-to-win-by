@@ -17,3 +17,6 @@ audio bundle and caches downloads automatically.
 Pass a local path to `-AudioSource` if you already mirrored the files. When
 left alone, the script downloads each track from the GitHub Pages audio URL
 into a cache folder before building the playlist.
+
+Playlist URL:
+`https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u`

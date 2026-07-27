@@ -1,5 +1,5 @@
 const COVER = "../staging/art/ZUPREME-Music_to_Win_By-COVER.png";
-const PLIST = "../github-pages/audio/Zupreme-Music_to_Win_By.m3u";
+const PLIST = "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u";
 
 const PAGE_ORDER = [
   ["home", "Overview"],
@@ -292,7 +292,7 @@ function dossierPage(album) {
     ["album.json", "Structured metadata and release state"],
     ["PLAN.md", "Rollout and publication plan"],
     ["archive-package.md", "Archive handoff manifest"],
-    ["staging/", "Playlist, cover art, and audio masters"],
+    ["audio/", "Playlist and WAV masters in GitHub Pages"],
   ];
   const content = `
     <section class="hero">
@@ -470,7 +470,7 @@ function archivePage(album) {
   const staged = [
     ["Playlist", PLIST],
     ["Cover art", "../staging/art/ZUPREME-Music_to_Win_By-COVER.png"],
-    ["Audio masters", "../staging/audio/01 - System Startup Sequence.wav ... 11 - Data Exfiltration.wav"],
+    ["Audio masters", "https://zupreme.github.io/music-to-win-by/audio/"],
   ];
   const content = `
     <section class="hero">

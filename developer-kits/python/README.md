@@ -4,6 +4,9 @@ Use this branch when a desktop app or internal tool needs album playback
 without building a browser player first. The helper defaults to the hosted
 GitHub Pages audio bundle and caches tracks locally on demand.
 
+Playlist URL:
+`https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u`
+
 ## File
 
 - `background_music.py` - `pygame`-based helper for the 11-track album

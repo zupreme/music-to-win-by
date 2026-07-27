@@ -11,6 +11,7 @@ music in web, app, and desktop projects.
 
 - `../audio/Zupreme-Music_to_Win_By.m3u` - playlist stored beside the GitHub Pages audio bundle
 - `https://zupreme.github.io/music-to-win-by/audio/` - the canonical hosted audio bundle
+- `https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u` - the canonical hosted playlist
 
 ## Branches
 

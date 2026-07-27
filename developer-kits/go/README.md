@@ -23,3 +23,6 @@ if err := player.Run(context.Background()); err != nil {
 By default the helper pulls from the hosted Pages audio URL and caches tracks
 under the local user cache directory. Set `AudioDir` to a local folder if you
 already mirrored the bundle.
+
+Playlist URL:
+`https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u`

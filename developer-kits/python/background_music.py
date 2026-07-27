@@ -37,18 +37,21 @@ TRACKS: tuple[Track, ...] = (
 )
 
 DEFAULT_AUDIO_BASE_URL = "https://zupreme.github.io/music-to-win-by/audio/"
+DEFAULT_PLAYLIST_URL = "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u"
 
 
 class BackgroundMusic:
     def __init__(
         self,
         audio_dir: Path | str = DEFAULT_AUDIO_BASE_URL,
+        playlist_url: str = DEFAULT_PLAYLIST_URL,
         tracks: Sequence[Track] = TRACKS,
         volume: float = 0.65,
         loop: bool = True,
         cache_dir: Path | str | None = None,
     ) -> None:
         self.audio_dir = audio_dir
+        self.playlist_url = playlist_url
         self.tracks = tuple(tracks)
         self.volume = max(0.0, min(1.0, volume))
         self.loop = loop

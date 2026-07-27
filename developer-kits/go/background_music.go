@@ -35,9 +35,11 @@ var DefaultTracks = []Track{
 }
 
 const DefaultAudioBaseURL = "https://zupreme.github.io/music-to-win-by/audio/"
+const DefaultPlaylistURL = "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u"
 
 type Player struct {
 	AudioDir string
+	PlaylistURL string
 	CacheDir string
 	Command  string
 	Volume   int
@@ -64,6 +66,13 @@ func (p *Player) source() string {
 		return p.AudioDir
 	}
 	return DefaultAudioBaseURL
+}
+
+func (p *Player) playlistSource() string {
+	if p.PlaylistURL != "" {
+		return p.PlaylistURL
+	}
+	return DefaultPlaylistURL
 }
 
 func (p *Player) isRemoteSource() bool {

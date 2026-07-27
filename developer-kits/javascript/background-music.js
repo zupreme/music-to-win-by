@@ -1,4 +1,5 @@
 const DEFAULT_BASE_URL = "https://zupreme.github.io/music-to-win-by/audio/";
+const DEFAULT_PLAYLIST_URL = "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u";
 
 const TRACKS = [
   { track: 1, title: "System Startup Sequence", file: "01 - System Startup Sequence.wav" },
@@ -40,6 +41,7 @@ function safePlay(audio) {
 export function createBackgroundMusic(options = {}) {
   const {
     baseUrl = DEFAULT_BASE_URL,
+    playlistUrl = DEFAULT_PLAYLIST_URL,
     tracks = TRACKS,
     autoPlay = false,
     loop = true,
@@ -111,6 +113,7 @@ export function createBackgroundMusic(options = {}) {
 
   return {
     audio,
+    playlistUrl,
     tracks,
     get currentIndex() {
       return index;
@@ -128,4 +131,4 @@ export function createBackgroundMusic(options = {}) {
   };
 }
 
-export { TRACKS, DEFAULT_BASE_URL, resolveTrackUrl };
+export { TRACKS, DEFAULT_BASE_URL, DEFAULT_PLAYLIST_URL, resolveTrackUrl };

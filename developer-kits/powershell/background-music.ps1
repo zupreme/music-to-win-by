@@ -1,6 +1,7 @@
 param(
   [Alias("AudioRoot")]
   [string]$AudioSource = "https://zupreme.github.io/music-to-win-by/audio/",
+  [string]$PlaylistUrl = "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u",
   [string]$CacheRoot = (Join-Path ([System.IO.Path]::GetTempPath()) "MusicToWinBy"),
   [int]$Volume = 65,
   [bool]$Loop = $true,

@@ -10,6 +10,8 @@ Use this branch when you want the album to run as browser background music.
 
 - Base audio URL:
   `https://zupreme.github.io/music-to-win-by/audio/`
+- Playlist URL:
+  `https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u`
 
 ## Suggested use
 
