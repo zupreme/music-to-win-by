@@ -562,22 +562,22 @@ function networksPage(album) {
     ["GitHub Pages", "canonical dossier", album.links?.github_pages || album.canonical_stack?.dossier || "index.html", "live"],
     ["Cloudflare Pages", "primary landing page", album.links?.cloudflare_pages || album.canonical_stack?.front_door || "front-door.html", "live"],
     ["Internet Archive", "preservation mirror", album.links?.internet_archive || album.canonical_stack?.archive || "archive.html", "live"],
-    ["Bandcamp", "commercial music storefront", "https://bandcamp.com/", "service"],
-    ["SoundCloud", "streaming / preview surface", "https://soundcloud.com/", "service"],
-    ["YouTube Music", "catalog presence", "https://music.youtube.com/", "service"],
-    ["Spotify", "listener access", album.links?.spotify || "https://open.spotify.com/", "live"],
-    ["Tidal", "listener access", album.links?.tidal || "https://tidal.com/", "live"],
-    ["Apple Music", "listener access", album.links?.apple_music || "https://music.apple.com/", "live"],
-    ["Amazon Music", "listener access", album.links?.amazon_music || "https://music.amazon.com/", "live"],
-    ["Shoutcast", "always-on radio layer", "https://www.shoutcast.com/", "service"],
+    ["Spotify", "listener access", album.links?.spotify || "", "live"],
+    ["Tidal", "listener access", album.links?.tidal || "", "live"],
+    ["Apple Music", "listener access", album.links?.apple_music || "", "live"],
+    ["Amazon Music", "listener access", album.links?.amazon_music || "", "live"],
+    ["Bandcamp", "commercial music storefront", "", "pending"],
+    ["SoundCloud", "streaming / preview surface", "", "pending"],
+    ["YouTube Music", "catalog presence", "", "pending"],
+    ["Shoutcast", "always-on radio layer", "", "pending"],
   ];
   const content = `
     <section class="hero">
       <p class="eyebrow">Network link matrix</p>
       <h1 class="title" style="max-width: 14ch;">Distribution Slots</h1>
       <p class="hero-copy" style="max-width: 60rem;">
-        This page shows where the major-network links will eventually live without cluttering
-        the dossier or landing page. It is meant to stay sparse until the actual URLs exist.
+        This page shows the verified release targets without cluttering the dossier or landing page.
+        If a service is not live yet, it stays visible as a note instead of a dead button.
       </p>
     </section>
 
@@ -596,7 +596,11 @@ function networksPage(album) {
                     : "This surface is not yet published, so the button points to the closest working service entry point."}
                 </p>
                 <div class="music-links" style="margin-top: 1rem;">
-                  <a class="button ${state === "live" ? "primary" : ""}" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${state === "live" ? "Open live link" : "Open service"}</a>
+                  ${
+                    href
+                      ? `<a class="button primary" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Open album</a>`
+                      : `<span class="empty">Not live yet</span>`
+                  }
                 </div>
                 <span class="empty">${escapeHtml(state)}</span>
               </article>
