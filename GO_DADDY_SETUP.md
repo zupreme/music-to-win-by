@@ -9,6 +9,7 @@ This is the minimum setup checklist for hosting the branded site on GoDaddy.
 - The exact root/subdomain plan
 - Whether Cloudflare will sit in front of the GoDaddy host
 - Any contact email or form destination you want published
+- Current blocker note: the GoDaddy FTP service is reachable from the workspace, but production sync still needs valid credentials and the exact remote upload path, or cPanel file-manager access.
 
 ## Suggested layout
 

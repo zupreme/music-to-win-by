@@ -71,10 +71,10 @@ def stage_album(source_root: Path = SOURCE_ROOT, target_root: Path = TARGET_ROOT
     art_root.mkdir(exist_ok=True)
 
     safe_copy(cover, art_root / cover.name)
-    safe_copy(playlist, target_root / playlist.name)
 
     tracks: list[TrackItem] = []
     ignored_duplicates: list[str] = []
+    staged_playlist_lines = ["#EXTM3U"]
 
     for duration_hint, raw_title, rel_name in parse_playlist(playlist):
         if "(1)" in rel_name:
@@ -93,6 +93,8 @@ def stage_album(source_root: Path = SOURCE_ROOT, target_root: Path = TARGET_ROOT
         staged_name = f"{track_no:02d} - {title}.wav"
         dst = audio_root / staged_name
         safe_copy(src, dst)
+        staged_playlist_lines.append(f"#EXTINF:{duration_hint},#Zupreme - {title}")
+        staged_playlist_lines.append(f"audio/{staged_name}")
         tracks.append(
             TrackItem(
                 track=track_no,
@@ -102,6 +104,8 @@ def stage_album(source_root: Path = SOURCE_ROOT, target_root: Path = TARGET_ROOT
                 duration_hint=duration_hint,
             )
         )
+
+    (target_root / playlist.name).write_text("\n".join(staged_playlist_lines) + "\n", encoding="utf-8")
 
     manifest = {
         "album": "Music to Win By",

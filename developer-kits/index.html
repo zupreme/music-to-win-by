@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music to Win By - Developer Kits</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b11;
+      --panel: rgba(14, 18, 28, 0.84);
+      --panel-strong: rgba(19, 24, 36, 0.96);
+      --text: #f6f4ef;
+      --muted: #aab2c2;
+      --line: rgba(255, 255, 255, 0.08);
+      --accent: #ff4d2e;
+      --accent-2: #f0c86b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Trebuchet MS", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255, 77, 46, 0.12), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(240, 200, 107, 0.1), transparent 20%),
+        linear-gradient(180deg, #0d1118 0%, #090b10 45%, #06070b 100%);
+      min-height: 100vh;
+      padding: 1.25rem;
+    }
+
+    .shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 1rem;
+      padding: clamp(1.4rem, 4vw, 2.5rem);
+      border: 1px solid var(--line);
+      border-radius: 1.8rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+        var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--accent-2);
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 1.25rem;
+    }
+
+    .card {
+      display: grid;
+      gap: 0.65rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 1.2rem;
+      background: var(--panel-strong);
+    }
+
+    .card strong {
+      font-size: 1.05rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover .card {
+      border-color: rgba(255, 77, 46, 0.45);
+    }
+
+    code {
+      padding: 0.1rem 0.35rem;
+      border-radius: 0.35rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+    }
+
+    .footer {
+      margin-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <p class="eyebrow">Developer kits</p>
+      <h1>Background music helpers for builders.</h1>
+      <p>
+        These examples are wired to the <code>audio/</code> bundle and the root
+        <code>Zupreme-Music_to_Win_By.m3u</code> playlist so a copied GitHub Pages
+        repo stays portable.
+      </p>
+      <div class="grid">
+        <a href="javascript/">
+          <div class="card">
+            <strong>JavaScript</strong>
+            <span>Browser background music controller for web apps and dashboards.</span>
+          </div>
+        </a>
+        <a href="python/">
+          <div class="card">
+            <strong>Python</strong>
+            <span>Desktop playback helper built around <code>pygame</code>.</span>
+          </div>
+        </a>
+        <a href="go/">
+          <div class="card">
+            <strong>Go</strong>
+            <span>Process-based runner for services, wrappers, and utility tools.</span>
+          </div>
+        </a>
+        <a href="powershell/">
+          <div class="card">
+            <strong>PowerShell</strong>
+            <span>Windows Media Player COM automation for Windows desktops.</span>
+          </div>
+        </a>
+        <a href="css/">
+          <div class="card">
+            <strong>CSS</strong>
+            <span>Ambient shell styling for a compact background-music UI.</span>
+          </div>
+        </a>
+      </div>
+      <p class="footer">
+        Public dossier: <a href="../">Music to Win By</a>.
+        Playlist: <a href="../Zupreme-Music_to_Win_By.m3u">Zupreme-Music_to_Win_By.m3u</a>.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

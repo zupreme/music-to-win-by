@@ -18,6 +18,10 @@ Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - M
 - Keep links to major music networks current and accurate.
 - Keep the archive handoff staged in `archive-package.md`; the playlist,
   cover art, and audio masters are already represented there.
+- Keep the GitHub Pages repo synced with the root `Zupreme-Music_to_Win_By.m3u`
+  playlist and the playable `audio/` bundle so the 11 WAV masters stay portable.
+- Keep `developer-kits/` current so builders can copy ready-made code for
+  JavaScript, Python, Go, PowerShell, and CSS integrations.
 - Use `source_manifest.json` and the staging script to ingest the Zdrop folder.
 - Keep the browseable local preview in `mockup/` aligned with the public stack.
 
@@ -29,6 +33,8 @@ Source audio is expected from `/home/zupreme/Zdrop/Zupreme - Music to Win By - M
    - Release facts
    - Public metadata
    - Integration cues for builders
+   - Root playlist plus `audio/` bundle with the WAV masters
+   - Developer kits for web, app, and desktop projects
    - Live: `https://zupreme.github.io/music-to-win-by/`
 
 2. Zeaun.com

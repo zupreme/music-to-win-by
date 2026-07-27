@@ -15,6 +15,7 @@ Source staging lives in `/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERE
 - GitHub Pages
 - Static dossier with album facts, track notes, and contact/link section
 - Developer-facing integration cues for technical teams
+- Root playlist plus `audio/` bundle with the 11 WAV masters
 - Live: `https://zupreme.github.io/music-to-win-by/`
 
 ### Public landing page
@@ -63,12 +64,17 @@ Source staging lives in `/home/zupreme/Zdrop/Zupreme - Music to Win By - MASTERE
 - The homepage copy is published and mirrored in `index.html`, `album.json`, `README.md`, and `PLAN.md`.
 - The homepage copy now speaks to builders, integrators, and technical audiences instead of generic release promotion.
 - The canonical package now centers `index.html`, `album.json`, `README.md`, and `PLAN.md`.
+- The GitHub Pages repo now also carries the root `Zupreme-Music_to_Win_By.m3u`
+  playlist plus the `audio/` bundle with the 11 WAV masters.
+- Developer kits now live under `developer-kits/` with ready-made examples for
+  JavaScript, Python, Go, PowerShell, and CSS.
 - Live outbound links are populated for the approved hosts and services.
 - Archive packaging is staged with the playlist, audio masters, and cover art;
   archive upload remains the next active step.
 - `archive-package.md` now stages the current upload bundle with checksums.
 - `source_manifest.json` and the staging script map the live Zdrop drop into the package.
 - `mockup/` provides a browseable local preview of the public stack while the release stays editable.
+- The GoDaddy production mirror is still blocked until valid FTP/SFTP credentials and the exact remote upload path are known, or cPanel file access is available; the FTP service itself is reachable from this workspace.
 
 ## Editorial rules
 

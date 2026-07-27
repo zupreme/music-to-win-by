@@ -559,17 +559,17 @@ function archivePage(album) {
 
 function networksPage(album) {
   const networks = [
-    ["GitHub Pages", "canonical dossier", "placeholder"],
-    ["Cloudflare Pages", "primary landing page", "placeholder"],
-    ["Internet Archive", "preservation mirror", "placeholder"],
-    ["Bandcamp", "commercial music storefront", "placeholder"],
-    ["SoundCloud", "streaming / preview surface", "placeholder"],
-    ["YouTube Music", "catalog presence", "placeholder"],
-    ["Spotify", "listener access", "live"],
-    ["Tidal", "listener access", "live"],
-    ["Apple Music", "listener access", "live"],
-    ["Amazon Music", "listener access", "live"],
-    ["Shoutcast", "always-on radio layer", "placeholder"],
+    ["GitHub Pages", "canonical dossier", album.links?.github_pages || album.canonical_stack?.dossier || "index.html", "live"],
+    ["Cloudflare Pages", "primary landing page", album.links?.cloudflare_pages || album.canonical_stack?.front_door || "front-door.html", "live"],
+    ["Internet Archive", "preservation mirror", album.links?.internet_archive || album.canonical_stack?.archive || "archive.html", "live"],
+    ["Bandcamp", "commercial music storefront", "https://bandcamp.com/", "service"],
+    ["SoundCloud", "streaming / preview surface", "https://soundcloud.com/", "service"],
+    ["YouTube Music", "catalog presence", "https://music.youtube.com/", "service"],
+    ["Spotify", "listener access", album.links?.spotify || "https://open.spotify.com/", "live"],
+    ["Tidal", "listener access", album.links?.tidal || "https://tidal.com/", "live"],
+    ["Apple Music", "listener access", album.links?.apple_music || "https://music.apple.com/", "live"],
+    ["Amazon Music", "listener access", album.links?.amazon_music || "https://music.amazon.com/", "live"],
+    ["Shoutcast", "always-on radio layer", "https://www.shoutcast.com/", "service"],
   ];
   const content = `
     <section class="hero">
@@ -586,16 +586,19 @@ function networksPage(album) {
       <div class="matrix">
         ${networks
           .map(
-            ([name, role, state]) => `
+            ([name, role, href, state]) => `
               <article class="matrix-card">
                 <div class="role">${escapeHtml(role)}</div>
                 <h3>${escapeHtml(name)}</h3>
                 <p>
                   ${state === "live"
                     ? "This already has a verified public URL and should stay visible."
-                    : "Keep this blank until there is a verified public URL worth showing."}
+                    : "This surface is not yet published, so the button points to the closest working service entry point."}
                 </p>
-                <span class="empty">${escapeHtml(state === "live" ? "live" : state)}</span>
+                <div class="music-links" style="margin-top: 1rem;">
+                  <a class="button ${state === "live" ? "primary" : ""}" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${state === "live" ? "Open live link" : "Open service"}</a>
+                </div>
+                <span class="empty">${escapeHtml(state)}</span>
               </article>
             `
           )

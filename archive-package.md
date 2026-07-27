@@ -10,16 +10,16 @@ upload is prepared.
 
 | File | Size (bytes) | SHA-256 |
 | --- | ---: | --- |
-| `index.html` | 27143 | `8d273cd5abe02081a881cd2520fa5f1eaf36af88ed0cb106eb5b980e4be8767d` |
-| `album.json` | 5721 | `d5188bbe835c8494ad4365f98e4664299f21bc03fdbd2535dc158b68e3ef5c5d` |
-| `README.md` | 3018 | `83e4beba3032546a234c1a009d3460489a529bf42095329cad51fef9bcf2c944` |
-| `PLAN.md` | 2459 | `43de7ade760d7e43746f44bc7a480ceb4d391c49d90c493e57d1bf94ae16b59f` |
+| `index.html` | 27584 | `cd83a4b3d444119e7117e3c820511357fcee624f3014832594658d3d1448421b` |
+| `album.json` | 5866 | `7fcd3f36b06b3edd57809fb44fdbe1b7e619bca27a9ddade20052e3cc85cfebd` |
+| `README.md` | 3452 | `fcfe533a4d6581e7ec3d418dce6a7e3879943e65904cf6a32e3114334e09266c` |
+| `PLAN.md` | 3129 | `40032aab0224dc8f763106ec59726702405595ce20faff06dcb7d871a36fee68` |
 
 ## Staged media bundle
 
 | File | Size (bytes) | SHA-256 |
 | --- | ---: | --- |
-| `staging/Zupreme-Music_to_Win_By.m3u` | 1261 | `f953fcdb6bd6aaedee1efeb8f2663a1e4626a838ebbaae2ea9bf8f1c065f5d81` |
+| `staging/Zupreme-Music_to_Win_By.m3u` | 870 | `311406d62c01e6fbb164cc6542727639aa1a9f86343dcbbd0af1ebdafc43e53c` |
 | `staging/art/ZUPREME-Music_to_Win_By-COVER.png` | 2699146 | `f8eb0923fc4723d87d33d20cf3d25323fec0fd81a76e4e4abcad3e517b0bc6d7` |
 | `staging/audio/01 - System Startup Sequence.wav` | 53860040 | `95a75fb84f2809f2f25386783c2bc43484ad7c7155b7389e9d83a7c2daadb66d` |
 | `staging/audio/02 - MD File.wav` | 62661272 | `dbb044dd35ca4df04d0dd605bc4b5678e123b906c68a066581d5ee9453a0e0f2` |

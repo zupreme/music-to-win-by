@@ -631,6 +631,10 @@
           The tone is direct by design: useful for humans, easy for crawlers, and consistent across
           GitHub Pages, Zeaun.com/music, and archive mirrors now that the release is live.
           The goal is not to teach promotion, but to make reuse obvious for technical teams.
+          The GitHub Pages bundle now also carries the root playlist plus the playable `audio/`
+          folder with the 11 WAV masters so the release stays portable.
+          The same Pages repo now includes developer kits for JavaScript, Python, Go,
+          PowerShell, and CSS integrations.
         </p>
           <div class="tag-row" aria-label="Album themes">
             <span class="tag"><strong>Genre</strong> electronic / focus / cybersecurity</span>
@@ -695,7 +699,7 @@
           <ul class="stack-list">
             <li class="stack-item">
               <strong>GitHub Pages</strong>
-              <span>Canonical dossier, metadata, track notes, and integration cues.</span>
+              <span>Canonical dossier, metadata, track notes, integration cues, root playlist, playable audio bundle, and developer kits.</span>
             </li>
             <li class="stack-item">
               <strong>Zeaun.com</strong>
@@ -709,12 +713,15 @@
           <div class="file-block" aria-label="Canonical files">
             <div class="file-heading">Canonical files</div>
             <ul class="file-list">
-              <li class="file-item">index.html</li>
-              <li class="file-item">album.json</li>
-              <li class="file-item">README.md</li>
-              <li class="file-item">PLAN.md</li>
-            </ul>
-          </div>
+            <li class="file-item">index.html</li>
+            <li class="file-item">album.json</li>
+            <li class="file-item">README.md</li>
+            <li class="file-item">PLAN.md</li>
+            <li class="file-item">Zupreme-Music_to_Win_By.m3u</li>
+            <li class="file-item">audio/*.wav</li>
+            <li class="file-item">developer-kits/*</li>
+          </ul>
+        </div>
         </aside>
 
         <section class="panel span-12">
@@ -839,8 +846,13 @@
           <div class="link-grid">
             <a class="link-card" href="https://zupreme.github.io/music-to-win-by/" rel="noopener noreferrer">
               <span class="link-title">GitHub Pages</span>
-              <span class="link-meta">Canonical dossier, release metadata, and integration notes.</span>
+              <span class="link-meta">Canonical dossier, release metadata, integration notes, root playlist, audio bundle, and developer kits.</span>
               <span class="link-placeholder">https://zupreme.github.io/music-to-win-by/</span>
+            </a>
+            <a class="link-card" href="https://zupreme.github.io/music-to-win-by/developer-kits/" rel="noopener noreferrer">
+              <span class="link-title">Developer kits</span>
+              <span class="link-meta">JavaScript, Python, Go, PowerShell, and CSS examples for album playback.</span>
+              <span class="link-placeholder">https://zupreme.github.io/music-to-win-by/developer-kits/</span>
             </a>
             <a class="link-card" href="https://zeaun.com/music/" rel="noopener noreferrer">
               <span class="link-title">Zeaun.com</span>
@@ -882,6 +894,8 @@
             <li>Write for builders who may want to plug the music into a product, demo, or dashboard.</li>
             <li>Leave outbound links blank only when the host is not verified and live.</li>
             <li>Keep the page consistent with the local canonical metadata package.</li>
+            <li>The GitHub Pages repo now also carries the root `Zupreme-Music_to_Win_By.m3u` playlist and the `audio/` folder with the WAV masters.</li>
+            <li>The same Pages repo also carries the `developer-kits/` branch set for builders.</li>
           </ul>
         </section>
       </div>

@@ -26,6 +26,8 @@
     "Track order is frozen.",
     "The release is published and the live network links are populated for the approved services.",
     "The public page and local dossier are kept in sync.",
+    "The GitHub Pages repo carries the root playlist plus the playable audio bundle under audio/ with the 11 WAV masters.",
+    "The GitHub Pages repo also carries developer kits for JavaScript, Python, Go, PowerShell, and CSS integrations.",
     "An archive handoff manifest is staged in archive-package.md.",
     "The staged upload bundle now includes the playlist, audio masters, and cover art.",
     "Primary album links are live on Spotify, Tidal, Apple Music, and Amazon Music.",
@@ -37,18 +39,18 @@
     "contents": [
       {
         "path": "index.html",
-        "size_bytes": 27143,
-        "sha256": "8d273cd5abe02081a881cd2520fa5f1eaf36af88ed0cb106eb5b980e4be8767d"
+        "size_bytes": 27584,
+        "sha256": "cd83a4b3d444119e7117e3c820511357fcee624f3014832594658d3d1448421b"
       },
       {
         "path": "README.md",
-        "size_bytes": 3018,
-        "sha256": "83e4beba3032546a234c1a009d3460489a529bf42095329cad51fef9bcf2c944"
+        "size_bytes": 3452,
+        "sha256": "fcfe533a4d6581e7ec3d418dce6a7e3879943e65904cf6a32e3114334e09266c"
       },
       {
         "path": "PLAN.md",
-        "size_bytes": 2459,
-        "sha256": "43de7ade760d7e43746f44bc7a480ceb4d391c49d90c493e57d1bf94ae16b59f"
+        "size_bytes": 3129,
+        "sha256": "40032aab0224dc8f763106ec59726702405595ce20faff06dcb7d871a36fee68"
       }
     ],
     "notes": [
@@ -59,6 +61,9 @@
   },
   "links": {
     "github_pages": "https://zupreme.github.io/music-to-win-by/",
+    "github_pages_playlist": "https://zupreme.github.io/music-to-win-by/Zupreme-Music_to_Win_By.m3u",
+    "github_pages_audio": "https://zupreme.github.io/music-to-win-by/audio/",
+    "github_pages_dev_kits": "https://zupreme.github.io/music-to-win-by/developer-kits/",
     "cloudflare_pages": "https://zeaun.com/music/",
     "internet_archive": "https://archive.org/details/music-to-win-by",
     "bandcamp": "",

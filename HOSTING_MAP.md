@@ -7,7 +7,8 @@ This is the clean public layout for the published release.
 - GitHub account: `zupreme`
 - Pages repo slug: `music-to-win-by`
 - Canonical dossier: `https://zupreme.github.io/music-to-win-by/`
-- Role: builder-facing dossier and machine-readable release reference
+- Role: builder-facing dossier, playlist host, developer kit host, and
+  machine-readable release reference
 
 ## Public front door
 
@@ -32,4 +33,8 @@ This is the clean public layout for the published release.
 - Use hyphenated slugs for public URLs: `music-to-win-by`
 - Avoid underscores in public paths unless a legacy asset already depends on them
 - Keep the same title, artist name, and release status everywhere
+- Keep `Zupreme-Music_to_Win_By.m3u` at the repo root and point it at `audio/`
+  so the bundle stays portable
+- Keep the playable bundle in `audio/` with the 11 WAV masters only
+- Keep the developer kit branches in `developer-kits/`
 - Current live music path: `https://zeaun.com/music/`
