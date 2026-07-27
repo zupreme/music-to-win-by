@@ -179,6 +179,35 @@
       font-size: 1.05rem;
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.35rem;
+    }
+
+    .hero-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.05rem;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+    }
+
+    .hero-action:hover,
+    .hero-action:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(255, 77, 46, 0.45);
+      background: rgba(255, 77, 46, 0.12);
+    }
+
     .signal-card {
       display: grid;
       gap: 0.95rem;
@@ -636,6 +665,14 @@
           The same Pages repo now includes developer kits for JavaScript, Python, Go,
           PowerShell, and CSS integrations.
         </p>
+        <div class="hero-actions" aria-label="Developer kits">
+          <a class="hero-action" href="https://zupreme.github.io/music-to-win-by/developer-kits/">
+            Open developer kits
+          </a>
+          <a class="hero-action" href="https://zupreme.github.io/music-to-win-by/Zupreme-Music_to_Win_By.m3u">
+            View playlist
+          </a>
+        </div>
           <div class="tag-row" aria-label="Album themes">
             <span class="tag"><strong>Genre</strong> electronic / focus / cybersecurity</span>
             <span class="tag"><strong>Status</strong> published</span>
