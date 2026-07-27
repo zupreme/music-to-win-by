@@ -14,7 +14,7 @@
   "canonical_stack": {
     "dossier": "https://zupreme.github.io/music-to-win-by/",
     "front_door": "https://zeaun.com/music/",
-    "archive": "https://archive.org/details/music-to-win-by"
+    "archive": ""
   },
   "canonical_files": [
     "index.html",
@@ -61,11 +61,12 @@
   },
   "links": {
     "github_pages": "https://zupreme.github.io/music-to-win-by/",
-    "github_pages_playlist": "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u",
-    "github_pages_audio": "https://zupreme.github.io/music-to-win-by/audio/",
+    "github_pages_playlist": "https://zupreme.github.io/music-to-win-by/github-pages/audio/Zupreme-Music_to_Win_By.m3u",
+    "github_pages_audio": "https://zupreme.github.io/music-to-win-by/github-pages/audio/",
     "github_pages_dev_kits": "https://zupreme.github.io/music-to-win-by/developer-kits/",
+    "zeaun_front_door": "https://zeaun.com/music/",
     "cloudflare_pages": "https://zeaun.com/music/",
-    "internet_archive": "https://archive.org/details/music-to-win-by",
+    "internet_archive": "",
     "bandcamp": "",
     "soundcloud": "",
     "youtube_music": "",

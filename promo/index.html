@@ -43,7 +43,7 @@
       inset: 0;
       background:
         linear-gradient(180deg, rgba(4, 8, 12, 0.42), rgba(4, 8, 12, 0.62)),
-        url("../staging/art/ZUPREME-Music_to_Win_By-COVER.png") center center / cover no-repeat;
+        url("../github-pages/audio/COVER.png") center center / cover no-repeat;
       filter: saturate(1.08) contrast(1.02);
       opacity: 0.86;
       z-index: -2;
@@ -453,13 +453,24 @@
   </div>
 
   <script>
-    const placeLink = (url, label, meta, cls = "live") => `
-      <a class="service ${cls}" href="${url || '#'}" target="_blank" rel="noopener noreferrer">
+    const placeLink = (url, label, meta, cls = "live") => {
+      if (!url) {
+        return `
+      <div class="service ${cls} is-pending" aria-disabled="true">
         <span class="name">${label}</span>
         <span class="meta">${meta}</span>
-        <span class="pill">${url ? 'Open' : 'Pending'}</span>
+        <span class="pill">Not live yet</span>
+      </div>
+    `;
+      }
+      return `
+      <a class="service ${cls}" href="${url}" target="_blank" rel="noopener noreferrer">
+        <span class="name">${label}</span>
+        <span class="meta">${meta}</span>
+        <span class="pill">Open</span>
       </a>
     `;
+    };
 
     const placeTrack = (track) => `
       <article class="track">

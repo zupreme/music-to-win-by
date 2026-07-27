@@ -1,10 +1,10 @@
-const COVER = "../staging/art/ZUPREME-Music_to_Win_By-COVER.png";
-const PLIST = "https://zupreme.github.io/music-to-win-by/audio/Zupreme-Music_to_Win_By.m3u";
+const COVER = "../github-pages/audio/COVER.png";
+const PLIST = "https://zupreme.github.io/music-to-win-by/github-pages/audio/Zupreme-Music_to_Win_By.m3u";
 
 const PAGE_ORDER = [
   ["home", "Overview"],
   ["dossier", "GitHub Pages"],
-  ["front-door", "Cloudflare Pages"],
+  ["front-door", "Zeaun.com"],
   ["archive", "Internet Archive"],
   ["networks", "Network Links"],
   ["metadata", "Metadata"],
@@ -13,7 +13,7 @@ const PAGE_ORDER = [
 const PAGE_TITLES = {
   home: "Music to Win By - Public Mockup",
   dossier: "Music to Win By - GitHub Pages Release",
-  "front-door": "Music to Win By - Cloudflare Pages Release",
+  "front-door": "Music to Win By - Zeaun.com Front Door",
   archive: "Music to Win By - Internet Archive Release",
   networks: "Music to Win By - Link Matrix Release",
   metadata: "Music to Win By - Metadata Release",
@@ -25,9 +25,9 @@ const PAGE_BLURBS = {
   dossier:
     "This is the repo-style canonical dossier view intended for GitHub Pages.",
   "front-door":
-    "This is the polished public landing page intended for Cloudflare Pages.",
+    "This is the polished public landing page for the Zeaun.com branded front door.",
   archive:
-    "This is the preservation-first mirror view intended for the Internet Archive.",
+    "This is the preservation-first mirror view intended for the Internet Archive (blank until the item is live).",
   networks:
     "This is the link matrix for major music networks and selective discovery surfaces.",
   metadata:
@@ -143,7 +143,7 @@ function homePage(album) {
     .join("");
   const linkCards = [
     ["GitHub Pages dossier", "Canonical docs, repo-style layout, and release notes.", "dossier.html"],
-    ["Cloudflare Pages front door", "Polished landing page with the cover and the quick pitch.", "front-door.html"],
+    ["Zeaun.com front door", "Polished landing page with the cover and the quick pitch.", "front-door.html"],
     ["Internet Archive mirror", "Preservation-first item page and upload bundle view.", "archive.html"],
     ["Music network links", "Live album URLs and discovery slots in one place.", "networks.html"],
     ["Metadata surface", "Structured data, citations, sitemap, and feed strategy.", "metadata.html"],
@@ -221,7 +221,7 @@ function homePage(album) {
       ${sectionTitle(
         "Public stack",
         "The release is intentionally split into distinct public faces so each host can do one job well.",
-        "GitHub = dossier, Cloudflare = front door, Archive = preservation."
+        "GitHub = dossier, Zeaun = front door, Archive = preservation (when live)."
       )}
       <div class="grid-3">
         ${pages}
@@ -268,8 +268,8 @@ function homePage(album) {
       <div class="grid-4">
         ${[
           ["GitHub Pages", "canonical dossier", album.links?.github_pages || "", "live"],
-          ["Cloudflare Pages", "primary landing page", album.links?.cloudflare_pages || "", "live"],
-          ["Internet Archive", "preservation mirror", album.links?.internet_archive || "", "live"],
+          ["Zeaun.com", "branded front door", album.links?.zeaun_front_door || album.links?.cloudflare_pages || "", "live"],
+          ["Internet Archive", "preservation mirror", album.links?.internet_archive || "", "pending"],
           ["Bandcamp", "commercial music storefront", album.links?.bandcamp || "", "pending"],
           ["SoundCloud", "streaming / preview surface", album.links?.soundcloud || "", "pending"],
           ["YouTube Music", "catalog presence", album.links?.youtube_music || "", "pending"],
@@ -329,7 +329,7 @@ function dossierPage(album) {
         <div class="repo-pane">
           <div class="card">
             <div class="repo-header">
-              <div class="repo-path"><code>zupreme</code> / <code>music_to_win_by</code></div>
+              <div class="repo-path"><code>music-to-win-by</code></div>
               <div class="chip-row">
                 <span class="chip">public</span>
                 <span class="chip">static</span>
@@ -496,7 +496,7 @@ function frontDoorPage(album) {
 function archivePage(album) {
   const staged = [
     ["Playlist", PLIST],
-    ["Cover art", "../staging/art/ZUPREME-Music_to_Win_By-COVER.png"],
+    ["Cover art", "../github-pages/audio/COVER.png"],
     ["Audio masters", "https://zupreme.github.io/music-to-win-by/audio/"],
   ];
   const content = `
@@ -587,8 +587,8 @@ function archivePage(album) {
 function networksPage(album) {
   const networks = [
     ["GitHub Pages", "canonical dossier", album.links?.github_pages || album.canonical_stack?.dossier || "index.html", "live"],
-    ["Cloudflare Pages", "primary landing page", album.links?.cloudflare_pages || album.canonical_stack?.front_door || "front-door.html", "live"],
-    ["Internet Archive", "preservation mirror", album.links?.internet_archive || album.canonical_stack?.archive || "archive.html", "live"],
+    ["Zeaun.com", "branded front door", album.links?.zeaun_front_door || album.links?.cloudflare_pages || album.canonical_stack?.front_door || "front-door.html", "live"],
+    ["Internet Archive", "preservation mirror", album.links?.internet_archive || album.canonical_stack?.archive || "", "pending"],
     ["Spotify", "listener access", album.links?.spotify || "", "live"],
     ["Tidal", "listener access", album.links?.tidal || "", "live"],
     ["Apple Music", "listener access", album.links?.apple_music || "", "live"],

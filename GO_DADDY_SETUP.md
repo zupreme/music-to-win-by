@@ -1,50 +1,29 @@
-# Zeaun.com GoDaddy cPanel Setup
+# Hosting Setup (Zeaun.com / GoDaddy — open beta)
 
-This is the minimum setup checklist for hosting the branded site on GoDaddy.
+Working FTP (verified 2026-07-27):
 
-## What I need from you
+- Host: `zeaun.com` (plain FTP and explicit FTPS, port 21)
+- Username: `zeaun_arkhimsc@zeaun.com`
+- Credentials file: `/home/zupreme/Zdrop/godaddy-ftp.txt` (password unchanged until true production)
+- Login home **is** the Zeaun web root (`music/`, `quran/`, `static/`, …). Do **not** `cwd public_html/zeaun.com/`.
+- Dead host (do not use): `ftp.magnitudemedia.group` (NXDOMAIN — this is why OpenClaw stalled)
 
-- cPanel login access
-- DNS edit access for `zeaun.com`
-- The exact root/subdomain plan
-- Whether Cloudflare will sit in front of the GoDaddy host
-- Any contact email or form destination you want published
-- Current blocker note: the GoDaddy FTP service is reachable from the workspace, but production sync still needs valid credentials and the exact remote upload path, or cPanel file-manager access.
+Sync music mockup:
+
+```bash
+python3 /home/zupreme/Zdrop/_sync_music_ftp.py
+```
+
+Canonical dossier remains on GitHub Pages: `https://zupreme.github.io/music-to-win-by/`
 
 ## Suggested layout
 
-- `zeaun.com` -> main branded site and contact surface
-- `zeaun.com/music/` -> album front door under the brand
-- `zupreme.github.io/music-to-win-by/` -> canonical dossier source
-
-## cPanel steps
-
-1. Open cPanel.
-2. Add the domain or subdomain you want to use.
-3. Point the document root to the static release folder.
-4. Upload the public files:
-   - `index.html`
-   - `album.json`
-   - `README.md`
-   - `PLAN.md`
-   - `promo/`
-   - `mockup/` if you want the preview surfaces public
-5. Turn on SSL for the host.
-6. Add redirects only after the final URLs are confirmed.
-
-## DNS steps
-
-1. Decide whether GoDaddy or Cloudflare will be authoritative for DNS.
-2. If Cloudflare is authoritative, update the nameservers at GoDaddy.
-3. If GoDaddy stays authoritative, add the needed A/CNAME records there.
-4. Keep the records minimal:
-  - root domain
-  - `www`
-  - `music` path or rewrite target
-  - any press or contact subdomain
+- `zeaun.com` -> branded site
+- `zeaun.com/music/` -> album front door (mockup sync target)
+- `zupreme.github.io/music-to-win-by/` -> canonical dossier
 
 ## Publishing rules
 
 - Use `music-to-win-by` as the public slug.
-- Do not mix underscores and hyphens in the public URLs.
-- Keep the GitHub Pages URL, the Cloudflare URL, and the GoDaddy host all pointing at the same published release language.
+- Keep dossier and branded site pointing at the same published release language.
+- Leave outbound slots blank until verified live (no `href="#"` fakes).
