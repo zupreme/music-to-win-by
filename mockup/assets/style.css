@@ -568,6 +568,24 @@ img {
   box-shadow: var(--shadow);
 }
 
+.stack-gap {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.catalog-release .track-list.compact {
+  margin-top: 0.4rem;
+}
+
+.track-list.compact .track {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.track-list.compact .track-summary {
+  margin-bottom: 0.35rem;
+}
+
 .hero-callout {
   display: grid;
   gap: 0.8rem;

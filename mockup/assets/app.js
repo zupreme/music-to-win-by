@@ -94,6 +94,7 @@ function releaseFacts(album) {
       <div class="metric"><strong>Front door</strong><span>${escapeHtml(stack.front_door || "")}</span></div>
       <div class="metric"><strong>Archive</strong><span>${escapeHtml(stack.archive || "")}</span></div>
       <div class="metric"><strong>Single</strong><span>${escapeHtml(single.title || "not set")}</span></div>
+      <div class="metric"><strong>Catalog releases</strong><span>${escapeHtml(String((album.releases || []).length || 1))}</span></div>
       <div class="metric"><strong>Prepared for</strong><span>${escapeHtml((credits.prepared_for || []).join(", "))}</span></div>
     </div>
   `;
@@ -102,6 +103,7 @@ function releaseFacts(album) {
 function renderServiceLinks(links) {
   const ordered = [
     ["spotify", "Spotify"],
+    ["spotify_track", "Spotify track"],
     ["youtube_music", "YouTube Music"],
     ["tidal", "Tidal"],
     ["apple_music", "Apple Music"],
@@ -114,6 +116,81 @@ function renderServiceLinks(links) {
         `<a href="${escapeHtml(links[key])}" rel="noopener noreferrer">${escapeHtml(label)}</a>`
     )
     .join(" • ");
+}
+
+function catalogReleases(album) {
+  return album.releases || [];
+}
+
+function releaseTrackList(release) {
+  return (release.tracklist || [])
+    .map(
+      (track) => `
+        <li class="track">
+          <div class="track-no">${String(track.track).padStart(2, "0")}</div>
+          <div>
+            <h3 class="track-title">${escapeHtml(track.title)}</h3>
+            <p class="track-summary">${escapeHtml(track.summary || "")}</p>
+            ${
+              track.links
+                ? `<div class="split-note">${renderServiceLinks(track.links)}</div>`
+                : ""
+            }
+          </div>
+        </li>
+      `
+    )
+    .join("");
+}
+
+function renderReleaseCatalog(album) {
+  const artist = album.artist_profile || {};
+  const releases = catalogReleases(album);
+  if (!releases.length) return "";
+  const cards = releases
+    .map((release) => {
+      const kind = release.kind || "release";
+      const count = (release.tracklist || []).length;
+      return `
+        <article class="card catalog-release">
+          <div class="meta-row">
+            ${badge("Type", kind)}
+            ${badge("Year", String(release.year || ""))}
+            ${badge("Tracks", String(count))}
+          </div>
+          <h3>${escapeHtml(release.title)}</h3>
+          <p>${escapeHtml(release.public_summary || "")}</p>
+          <div class="divider"></div>
+          <div class="split-note">${renderServiceLinks(release.links || {}) || `<span class="empty">Links pending</span>`}</div>
+          <div class="divider"></div>
+          <ol class="track-list compact">${releaseTrackList(release)}</ol>
+        </article>
+      `;
+    })
+    .join("");
+  return `
+    <section class="section">
+      ${sectionTitle(
+        "Full catalog",
+        "Every album and song currently listed on the #Zupreme Spotify artist page, with verified adjacent-network links where available."
+      )}
+      <div class="meta-row" style="margin-bottom:1rem">
+        ${
+          artist.spotify
+            ? `<a class="button primary" href="${escapeHtml(artist.spotify)}" target="_blank" rel="noopener noreferrer">Open Spotify artist</a>`
+            : ""
+        }
+        ${
+          artist.apple_music
+            ? `<a class="button" href="${escapeHtml(artist.apple_music)}" target="_blank" rel="noopener noreferrer">Open Apple Music artist</a>`
+            : ""
+        }
+        ${badge("Releases", String(releases.length))}
+        ${badge("Songs", String(releases.reduce((n, r) => n + (r.tracklist || []).length, 0)))}
+      </div>
+      <div class="stack-gap">${cards}</div>
+    </section>
+  `;
 }
 
 function pageShell(page, album, content) {
@@ -199,23 +276,7 @@ function homePage(album) {
       </div>
     </section>
 
-    <section class="section">
-      ${sectionTitle("Release pages", "The album and single now have their own live public URLs on the major services.")}
-      <div class="grid-2">
-        <div class="card">
-          <h3>${escapeHtml(album.album)}</h3>
-          <p>${escapeHtml(album.public_summary)}</p>
-          <div class="divider"></div>
-          <div class="split-note">${renderServiceLinks(album.links || {})}</div>
-        </div>
-        <div class="card">
-          <h3>${escapeHtml((album.single || {}).title || "Single")}</h3>
-          <p>A separate release page for the companion single.</p>
-          <div class="divider"></div>
-          <div class="split-note">${renderServiceLinks((album.single || {}).links || {})}</div>
-        </div>
-      </div>
-    </section>
+    ${renderReleaseCatalog(album)}
 
     <section class="section">
       ${sectionTitle(
@@ -230,8 +291,8 @@ function homePage(album) {
 
     <section class="section">
       ${sectionTitle(
-        "Track architecture",
-        "The track order is authoritative from the staged metadata and ID3 tags."
+        "Flagship track architecture",
+        "Music to Win By track order is authoritative from the staged metadata and ID3 tags."
       )}
       <ol class="track-list">${trackList(album)}</ol>
     </section>
@@ -585,17 +646,20 @@ function archivePage(album) {
 }
 
 function networksPage(album) {
+  const artist = album.artist_profile || {};
   const networks = [
+    ["Spotify artist", "full #Zupreme catalog", artist.spotify || album.links?.artist_spotify || "", "live"],
+    ["Apple Music artist", "Apple catalog presence", artist.apple_music || album.links?.artist_apple_music || "", "live"],
     ["GitHub Pages", "canonical dossier", album.links?.github_pages || album.canonical_stack?.dossier || "index.html", "live"],
     ["Zeaun.com", "branded front door", album.links?.zeaun_front_door || album.links?.cloudflare_pages || album.canonical_stack?.front_door || "front-door.html", "live"],
     ["Internet Archive", "preservation mirror", album.links?.internet_archive || album.canonical_stack?.archive || "", "pending"],
-    ["Spotify", "listener access", album.links?.spotify || "", "live"],
-    ["Tidal", "listener access", album.links?.tidal || "", "live"],
-    ["Apple Music", "listener access", album.links?.apple_music || "", "live"],
-    ["Amazon Music", "listener access", album.links?.amazon_music || "", "live"],
+    ["Spotify album", "Music to Win By", album.links?.spotify || "", "live"],
+    ["Tidal", "Music to Win By", album.links?.tidal || "", "live"],
+    ["Apple Music album", "Music to Win By", album.links?.apple_music || "", "live"],
+    ["Amazon Music", "Music to Win By", album.links?.amazon_music || "", "live"],
     ["Bandcamp", "commercial music storefront", "", "pending"],
     ["SoundCloud", "streaming / preview surface", "", "pending"],
-    ["YouTube Music", "catalog presence", "", "pending"],
+    ["YouTube Music", "catalog presence", (album.single || {}).links?.youtube_music || album.links?.youtube_music || "", ((album.single || {}).links?.youtube_music || album.links?.youtube_music) ? "live" : "pending"],
     ["Shoutcast", "always-on radio layer", "", "pending"],
   ];
   const content = `
@@ -608,8 +672,10 @@ function networksPage(album) {
       </p>
     </section>
 
+    ${renderReleaseCatalog(album)}
+
     <section class="section">
-      ${sectionTitle("Major network cards", "The live candidates are the ones that should carry the strongest public signal.")}
+      ${sectionTitle("Major network cards", "Artist pages plus the strongest public album slots.")}
       <div class="matrix">
         ${networks
           .map(
@@ -630,7 +696,7 @@ function networksPage(album) {
                           ${escapeHtml(href)}
                         </a>
                         <div class="divider"></div>
-                        <a class="button primary" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Open album</a>
+                        <a class="button primary" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Open</a>
                       `
                       : `<span class="empty">Not live yet</span>`
                   }

@@ -1,183 +1,13 @@
 {
-  "album": "Music to Win By",
-  "artist": "#zupreme",
-  "genre": [
-    "electronic",
-    "focus",
-    "cybersecurity",
-    "work soundtrack"
-  ],
-  "themes": [
-    "hacker focus",
-    "operator discipline",
-    "red-team aesthetics",
-    "deep work",
-    "security culture"
-  ],
-  "public_summary": "An integration-friendly electronic album for builders, operators, and long technical sessions.",
-  "release_status": "published",
-  "canonical_stack": {
-    "dossier": "https://zupreme.github.io/music-to-win-by/",
-    "front_door": "https://zeaun.com/music/",
-    "archive": ""
-  },
-  "canonical_files": [
-    "index.html",
-    "album.json",
-    "README.md",
-    "PLAN.md"
-  ],
-  "release_notes": [
-    "Track order is frozen.",
-    "The release is published and the live network links are populated for the approved services.",
-    "The public page and local dossier are kept in sync.",
-    "The GitHub Pages repo carries the playable audio bundle under audio/ with the 11 WAV masters plus the playlist beside it.",
-    "The GitHub Pages repo also carries developer kits for JavaScript, Python, Go, PowerShell, and CSS integrations.",
-    "An archive handoff manifest is staged in archive-package.md.",
-    "The staged upload bundle now includes the playlist, audio masters, and cover art.",
-    "Primary album links are live on Spotify, Tidal, Apple Music, and Amazon Music.",
-    "The companion single Pasha x Brain Like Prada is live on Spotify, YouTube Music, Tidal, Apple Music, and Amazon Music.",
-    "Full #Zupreme Spotify catalog is folded into this site: Music to Win By plus Chicago on Beatties Ford, Gimme The Prompt x Drop a Pin, and Pasha x Brain Like Prada.",
-    "Artist page: https://open.spotify.com/artist/2EiVybyzpt1TPhcrwECxVt"
-  ],
-  "archive_package": {
-    "status": "staged",
-    "manifest": "archive-package.md",
-    "contents": [
-      {
-        "path": "index.html",
-        "size_bytes": 32190,
-        "sha256": "4a9453fb3d75ca7cc914b8615d677b955a172b07a3537cd0727d892211f874b9"
-      },
-      {
-        "path": "README.md",
-        "size_bytes": 3954,
-        "sha256": "c12b36709e40066437cf92b818163541d612da9da3a37cfa82ff5047a48a6657"
-      },
-      {
-        "path": "PLAN.md",
-        "size_bytes": 3473,
-        "sha256": "334af29cb51ca1edfd4569c609e23991d01c89bfb8048eaee2e1cd5bd548d7fb"
-      }
-    ],
-    "notes": [
-      "The staged media bundle now includes the playlist, audio masters, and cover art.",
-      "Keep outbound links blank until they are verified and live.",
-      "Mirror the same title, track order, and release language in every public host."
-    ]
-  },
-  "links": {
-    "github_pages": "https://zupreme.github.io/music-to-win-by/",
-    "github_pages_playlist": "https://zupreme.github.io/music-to-win-by/github-pages/audio/Zupreme-Music_to_Win_By.m3u",
-    "github_pages_audio": "https://zupreme.github.io/music-to-win-by/github-pages/audio/",
-    "github_pages_dev_kits": "https://zupreme.github.io/music-to-win-by/developer-kits/",
-    "zeaun_front_door": "https://zeaun.com/music/",
-    "cloudflare_pages": "https://zeaun.com/music/",
-    "internet_archive": "",
-    "bandcamp": "",
-    "soundcloud": "",
-    "youtube_music": "",
-    "spotify": "https://open.spotify.com/album/2OKmgEUtOEPlj73lQQ1FsI",
-    "tidal": "https://tidal.com/album/546515206/u",
-    "apple_music": "https://music.apple.com/us/album/music-to-win-by/6794794865",
-    "amazon_music": "https://music.amazon.com/albums/B0HBMLFF4S?ref=dm_sh_UYY3TUHRrdHE6XDPTPPGtwjBo",
-    "shoutcast": "",
-    "twitch": "",
-    "bigo_live": "",
-    "artist_spotify": "https://open.spotify.com/artist/2EiVybyzpt1TPhcrwECxVt",
-    "artist_apple_music": "https://music.apple.com/us/artist/zupreme/6794768070"
-  },
-  "single": {
-    "title": "Pasha x Brain Like Prada",
-    "links": {
-      "spotify": "https://open.spotify.com/album/3UvPwxLJNYx2fzsiOQfZMl",
-      "spotify_track": "https://open.spotify.com/track/1atzABbsRfbaiGgknhKcre",
-      "youtube_music": "https://music.youtube.com/watch?v=61fDdvDbpwE",
-      "tidal": "https://tidal.com/album/546516306/u",
-      "amazon_music": "https://music.amazon.com/albums/B0HBMPSZGX",
-      "apple_music": "https://music.apple.com/us/album/pasha-x-brain-like-prada-single/6794795304"
-    }
-  },
-  "tracklist": [
-    {
-      "track": 1,
-      "title": "System Startup Sequence",
-      "summary": "Boots the release into motion with clean operator energy."
-    },
-    {
-      "track": 2,
-      "title": "MD File",
-      "summary": "A documentation-minded cut for people who live in readmes, notes, and runbooks."
-    },
-    {
-      "track": 3,
-      "title": "The Agentic Layer",
-      "summary": "Pushes the album into autonomous-work territory with a machine-aware pulse."
-    },
-    {
-      "track": 4,
-      "title": "Penetration Testing Mantra",
-      "summary": "Built for the red-team mindset: methodical, repeatable, and focused."
-    },
-    {
-      "track": 5,
-      "title": "The Encoder Tantric",
-      "summary": "A high-control groove for encrypting, decoding, and staying in the zone."
-    },
-    {
-      "track": 6,
-      "title": "Flow State Activated",
-      "summary": "The pivot point where the album locks into steady execution mode."
-    },
-    {
-      "track": 7,
-      "title": "Goal in Focus",
-      "summary": "A discipline track about narrowing attention and removing noise."
-    },
-    {
-      "track": 8,
-      "title": "The Zen of Lyubov",
-      "summary": "Adds a human center and emotional clarity without leaving the mission."
-    },
-    {
-      "track": 9,
-      "title": "Good Ole Boy Behind The Paywall",
-      "summary": "A sharp-edged critique track with platform and gatekeeping attitude."
-    },
-    {
-      "track": 10,
-      "title": "Like a Redteam Cartel",
-      "summary": "The most aggressive industrial-cyber cut in the sequence."
-    },
-    {
-      "track": 11,
-      "title": "Data Exfiltration",
-      "summary": "A closing track that leaves the album with motion, tension, and residue."
-    }
-  ],
-  "credits": {
-    "artist": "#zupreme",
-    "release_type": "published release",
-    "prepared_for": [
-      "GitHub Pages",
-      "Zeaun.com",
-      "Internet Archive"
-    ]
-  },
-  "rights": {
-    "status": "published",
-    "note": "Live album and single links are populated for the approved services."
-  },
-  "contact": {
-    "note": "Public contact and release source live under zupreme on GitHub and the Zeaun.com host; mirror the same published release language across GitHub Pages, Zeaun.com/music, and the branded site. The public copy should also invite technical teams to reuse the album as a soundtrack layer inside products, dashboards, demos, and internal tools."
-  },
-  "artist_profile": {
+  "artist": {
     "name": "#zupreme",
     "display_name": "#Zupreme",
     "spotify": "https://open.spotify.com/artist/2EiVybyzpt1TPhcrwECxVt",
     "spotify_id": "2EiVybyzpt1TPhcrwECxVt",
     "apple_music": "https://music.apple.com/us/artist/zupreme/6794768070"
   },
+  "canonical_front_door": "https://zeaun.com/music/",
+  "source": "https://open.spotify.com/artist/2EiVybyzpt1TPhcrwECxVt",
   "releases": [
     {
       "title": "Music to Win By",
@@ -364,5 +194,11 @@
         }
       ]
     }
+  ],
+  "notes": [
+    "Catalog mirrors the live Spotify artist page for #Zupreme.",
+    "Music to Win By remains the flagship album on this site.",
+    "Adjacent-network links are filled only when verified; Gimme The Prompt is Spotify-first for now.",
+    "Feature credits on other artists (for example Wolves In The Den) are not listed as primary catalog unless they appear on this Spotify artist page."
   ]
 }
