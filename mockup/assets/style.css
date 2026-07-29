@@ -863,3 +863,29 @@ img {
     grid-template-columns: 3rem 1fr;
   }
 }
+
+.shorts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+  gap: 1.1rem;
+  justify-content: start;
+}
+
+.short-card .short-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.short-card .short-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+

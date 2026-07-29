@@ -102,6 +102,8 @@ function releaseFacts(album) {
 
 function renderServiceLinks(links) {
   const ordered = [
+    ["youtube", "YouTube"],
+    ["youtube_shorts", "YouTube Short"],
     ["spotify", "Spotify"],
     ["spotify_track", "Spotify track"],
     ["youtube_music", "YouTube Music"],
@@ -141,6 +143,45 @@ function releaseTrackList(release) {
       `
     )
     .join("");
+}
+
+function renderYoutubeShorts(album) {
+  const shorts = album.youtube_shorts || [];
+  if (!shorts.length) return "";
+  const cards = shorts
+    .map(
+      (short) => `
+        <article class="card short-card">
+          <div class="meta-row">
+            ${badge("YouTube Short", "playable")}
+            ${badge("Release", short.release || short.title || "")}
+          </div>
+          <h3>${escapeHtml(short.title || "Music short")}</h3>
+          <div class="short-frame">
+            <iframe
+              src="${escapeHtml(short.embed || `https://www.youtube-nocookie.com/embed/${short.id}?enablejsapi=1&playsinline=1&rel=0&modestbranding=1`)}"
+              title="${escapeHtml(short.title || "YouTube short")}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <div class="divider"></div>
+          <a class="button" href="${escapeHtml(short.url)}" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+        </article>
+      `
+    )
+    .join("");
+  return `
+    <section class="section">
+      ${sectionTitle(
+        "Recent music shorts",
+        "Play the latest #zupreme YouTube Shorts here without leaving Audio Frame."
+      )}
+      <div class="shorts-grid">${cards}</div>
+    </section>
+  `;
 }
 
 function renderReleaseCatalog(album) {
@@ -281,6 +322,8 @@ function homePage(album) {
         </div>
       </div>
     </section>
+
+    ${renderYoutubeShorts(album)}
 
     ${renderReleaseCatalog(album)}
 
@@ -677,6 +720,8 @@ function networksPage(album) {
         If a service is not live yet, it stays visible as a note instead of a dead button.
       </p>
     </section>
+
+    ${renderYoutubeShorts(album)}
 
     ${renderReleaseCatalog(album)}
 

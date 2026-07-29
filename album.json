@@ -38,7 +38,9 @@
     "Primary album links are live on Spotify, Tidal, Apple Music, and Amazon Music.",
     "The companion single Pasha x Brain Like Prada is live on Spotify, YouTube Music, Tidal, Apple Music, and Amazon Music.",
     "Full #Zupreme Spotify catalog is folded into this site: Music to Win By plus Chicago on Beatties Ford, Gimme The Prompt x Drop a Pin, and Pasha x Brain Like Prada.",
-    "Artist page: https://open.spotify.com/artist/2EiVybyzpt1TPhcrwECxVt"
+    "Normalize the artist family as Zupreme / #ZUPREME / #704Vex while reconciling Apple Music, TIDAL, YouTube, and YouTube Music.",
+    "Artist page: https://open.spotify.com/artist/2EiVybyzpt1TPhcrwECxVt",
+    "Recent YouTube music shorts are playable on the Audio Frame music page and mirrored into Signal Lab."
   ],
   "archive_package": {
     "status": "staged",
@@ -46,18 +48,18 @@
     "contents": [
       {
         "path": "index.html",
-        "size_bytes": 32190,
-        "sha256": "4a9453fb3d75ca7cc914b8615d677b955a172b07a3537cd0727d892211f874b9"
+        "size_bytes": 32445,
+        "sha256": "3789f1e034f6ad8f85742b75e3221752bc2e485e86bc503fcc96e209305e21db"
       },
       {
         "path": "README.md",
-        "size_bytes": 3954,
-        "sha256": "c12b36709e40066437cf92b818163541d612da9da3a37cfa82ff5047a48a6657"
+        "size_bytes": 4066,
+        "sha256": "cf473f72e0f402bd5c294d7333567209563a4bc398d12d279b5718da48740d6f"
       },
       {
         "path": "PLAN.md",
-        "size_bytes": 3473,
-        "sha256": "334af29cb51ca1edfd4569c609e23991d01c89bfb8048eaee2e1cd5bd548d7fb"
+        "size_bytes": 3704,
+        "sha256": "9fecc07444ef7f6bcb782235a8ee4c6810f853a35657e66f12dd8ac67915ff9c"
       }
     ],
     "notes": [
@@ -76,10 +78,11 @@
     "internet_archive": "",
     "bandcamp": "",
     "soundcloud": "",
-    "youtube_music": "",
+    "youtube_music": "https://music.youtube.com/channel/UCv3VcOaksTpcb8aizAewU1w",
     "spotify": "https://open.spotify.com/album/2OKmgEUtOEPlj73lQQ1FsI",
     "tidal": "https://tidal.com/album/546515206/u",
     "apple_music": "https://music.apple.com/us/album/music-to-win-by/6794794865",
+    "youtube": "https://www.youtube.com/channel/UCp-EKDYN0a00WlHvBVoc2Tw",
     "amazon_music": "https://music.amazon.com/albums/B0HBMLFF4S?ref=dm_sh_UYY3TUHRrdHE6XDPTPPGtwjBo",
     "shoutcast": "",
     "twitch": "",
@@ -174,9 +177,17 @@
   "artist_profile": {
     "name": "#zupreme",
     "display_name": "#Zupreme",
+    "aliases": [
+      "Zupreme",
+      "#ZUPREME",
+      "#704Vex"
+    ],
     "spotify": "https://open.spotify.com/artist/2EiVybyzpt1TPhcrwECxVt",
     "spotify_id": "2EiVybyzpt1TPhcrwECxVt",
-    "apple_music": "https://music.apple.com/us/artist/zupreme/6794768070"
+    "apple_music": "https://music.apple.com/us/artist/zupreme/6794768070",
+    "tidal": "https://tidal.com/artist/66830676",
+    "youtube": "https://www.youtube.com/channel/UCp-EKDYN0a00WlHvBVoc2Tw",
+    "youtube_music": "https://music.youtube.com/channel/UCv3VcOaksTpcb8aizAewU1w"
   },
   "releases": [
     {
@@ -285,6 +296,26 @@
       ]
     },
     {
+      "title": "Zhikr x Why Not Win",
+      "kind": "single",
+      "year": 2026,
+      "public_summary": "Recent music short from the #zupreme YouTube channel.",
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/RjlOzjjupsY",
+        "youtube_shorts": "https://www.youtube.com/shorts/RjlOzjjupsY"
+      },
+      "tracklist": [
+        {
+          "track": 1,
+          "title": "Zhikr x Why Not Win",
+          "summary": "Playable YouTube Short on Zeaun Audio Frame.",
+          "links": {
+            "youtube": "https://www.youtube.com/shorts/RjlOzjjupsY"
+          }
+        }
+      ]
+    },
+    {
       "title": "Chicago on Beatties Ford",
       "kind": "single",
       "year": 2026,
@@ -322,7 +353,9 @@
       "public_summary": "Prompt-and-pin single from the #Zupreme Spotify catalog.",
       "spotify_album_id": "41FROuPz7H8g5XLtRTFa31",
       "links": {
-        "spotify": "https://open.spotify.com/album/41FROuPz7H8g5XLtRTFa31"
+        "spotify": "https://open.spotify.com/album/41FROuPz7H8g5XLtRTFa31",
+        "youtube": "https://www.youtube.com/shorts/_LG6od1VPGg",
+        "youtube_shorts": "https://www.youtube.com/shorts/_LG6od1VPGg"
       },
       "tracklist": [
         {
@@ -330,7 +363,8 @@
           "title": "Gimme The Prompt x Drop a Pin",
           "summary": "Title track; adjacent-network links pending verification.",
           "links": {
-            "spotify": "https://open.spotify.com/album/41FROuPz7H8g5XLtRTFa31"
+            "spotify": "https://open.spotify.com/album/41FROuPz7H8g5XLtRTFa31",
+            "youtube": "https://www.youtube.com/shorts/_LG6od1VPGg"
           }
         }
       ]
@@ -363,6 +397,22 @@
           }
         }
       ]
+    }
+  ],
+  "youtube_shorts": [
+    {
+      "id": "_LG6od1VPGg",
+      "title": "Gimme The Prompt x Drop a Pin",
+      "url": "https://www.youtube.com/shorts/_LG6od1VPGg",
+      "embed": "https://www.youtube-nocookie.com/embed/_LG6od1VPGg?enablejsapi=1&playsinline=1&rel=0&modestbranding=1",
+      "release": "Gimme The Prompt x Drop a Pin"
+    },
+    {
+      "id": "RjlOzjjupsY",
+      "title": "Zhikr x Why Not Win",
+      "url": "https://www.youtube.com/shorts/RjlOzjjupsY",
+      "embed": "https://www.youtube-nocookie.com/embed/RjlOzjjupsY?enablejsapi=1&playsinline=1&rel=0&modestbranding=1",
+      "release": "Zhikr x Why Not Win"
     }
   ]
 }
