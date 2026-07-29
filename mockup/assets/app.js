@@ -199,15 +199,21 @@ function pageShell(page, album, content) {
   app.innerHTML = `
     <div class="page">
       <header class="topbar">
-        <a class="brand" href="index.html">
-          <span class="brand-mark"></span>
-          <span>Music to Win By / Release</span>
-        </a>
+        <div class="brand-block">
+          <a class="site-home brand-home" href="/">Zeaun.com</a>
+          <a class="brand" href="index.html">
+            <span class="brand-mark"></span>
+            <span>Music to Win By / Release</span>
+          </a>
+        </div>
         <nav class="nav" aria-label="Primary">${pageNav(page)}</nav>
       </header>
       ${content}
       <footer class="footer">
-        <div>${escapeHtml(album.artist)} / ${escapeHtml(album.album)} / local release shell</div>
+        <div>
+          <a href="/">Zeaun.com</a>
+          · ${escapeHtml(album.artist)} / ${escapeHtml(album.album)}
+        </div>
         <div>${escapeHtml(PAGE_BLURBS[page] || PAGE_BLURBS.home)}</div>
       </footer>
     </div>
